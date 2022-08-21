@@ -1,0 +1,122 @@
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+main {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+}
+header {
+  width: 1026px;
+  height: 55px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+}
+
+main img {
+  margin: 0;
+}
+main input[type="text"] {
+  position: relative;
+  padding-left: 68px;
+  margin-top: 15px;
+  width: 956px;
+  height: 60px;
+
+  border: 1px solid #dddada;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+}
+#products {
+  width: 1024px;
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.products_item {
+  position: relative;
+  text-align: center;
+  width: 300px;
+  height: 480px;
+  padding-top: 14px;
+  margin-bottom: 50px;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+}
+.products_item h2 {
+  margin-top: 25px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+}
+.products_item p {
+  margin-top: 8px;
+  font-family: "Roboto";
+  font-size: 14px;
+  line-height: 16px;
+  color: #767272;
+}
+.products_item_button {
+  margin-top: 11px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 23px;
+  color: #ffffff;
+  padding: 13px 25px;
+  background-color: #0e49b5;
+  border-radius: 5px;
+  display: inline-block;
+}
+.products_item_bottom {
+  position: absolute;
+  bottom: 0;
+  width: 300px;
+  box-sizing: border-box;
+
+  padding: 13px 30px 0 44px;
+  height: 86px;
+  background: #dae2ea;
+  border-radius: 0px 0px 10px 10px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-size: 14px;
+  line-height: 16px;
+
+  color: #3b3e66;
+}
+
+.products_item_bottom p {
+  margin: 0;
+}
+.products_item_bottom img {
+  position: absolute;
+  top: 19px;
+  left: 13px;
+}
+.products_item_bottom div {
+  margin-top: 6px;
+  display: flex;
+  justify-content: space-between;
+}
+.products_item_like {
+  position: absolute;
+  right: 14px;
+}
