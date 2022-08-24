@@ -1422,7 +1422,40 @@ const items = [
     },
   },
 ];
-
+function settingsDisplay() {
+  var x = document.getElementById("mfs");
+  if (x.style.display === "block") x.style.display = "none";
+  else x.style.display = "block";
+}
+function changeDisplay(element) {
+  switch (element.id) {
+    case "btn_1":
+      var x = document.getElementById("field_1");
+      if (x.style.display === "block") x.style.display = "none";
+      else x.style.display = "block";
+      break;
+    case "btn_2":
+      var x = document.getElementById("field_2");
+      if (x.style.display === "block") x.style.display = "none";
+      else x.style.display = "block";
+      break;
+    case "btn_3":
+      var x = document.getElementById("field_3");
+      if (x.style.display === "block") x.style.display = "none";
+      else x.style.display = "block";
+      break;
+    case "btn_4":
+      var x = document.getElementById("field_4");
+      if (x.style.display === "block") x.style.display = "none";
+      else x.style.display = "block";
+      break;
+    case "btn_5":
+      var x = document.getElementById("field_5");
+      if (x.style.display === "block") x.style.display = "none";
+      else x.style.display = "block";
+      break;
+  }
+}
 const container = document.getElementById("products");
 
 items.forEach((element) => {

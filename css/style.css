@@ -4,6 +4,9 @@
   box-sizing: inherit;
   margin: 0;
   padding: 0;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
 }
 main {
   display: flex;
@@ -32,7 +35,7 @@ main input[type="text"] {
   padding-left: 4.548vw;
   margin-top: 1.003vh;
   width: 63.946vw;
-  height: 4.013vw;
+  height: 8.042vh;
 
   border: 1px solid #dddada;
   font-family: "Roboto";
@@ -43,8 +46,98 @@ main input[type="text"] {
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
   border-radius: 5px;
 }
-#products {
+.filter_img {
+  position: absolute;
+  width: 2.675vw;
+  height: 5.362vh;
+  right: 4.183vw;
+
+  top: 2.68vh;
+}
+.filter_img:hover {
+  cursor: pointer;
+}
+.main_field {
+  display: flex;
   width: 68.495vw;
+}
+hr {
+  border: 0.5px solid #dddddd;
+  transform: matrix(1, 0, 0, 1, 0, 0);
+}
+.main_field_settings {
+  min-width: 21.384vw;
+  height: fit-content;
+  margin-top: 2.676vw;
+  margin-right: 4.167vw;
+  border: 1px solid #dddada;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+.main_field_settings_option,
+.main_field_settings_option_menu {
+  padding: 2.278vh 1.274vw 1.34vh 2.006vw;
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+}
+
+.main_field_settings_option {
+  display: flex;
+  justify-content: space-between;
+  font-size: 2.412vh;
+  line-height: 2.815vh;
+}
+.main_field_settings_option img:hover {
+  cursor: pointer;
+}
+.main_field_settings_option_menu {
+  padding-top: 0.005vh;
+  padding-bottom: 2.815vh;
+  display: none;
+}
+.main_field_settings_option_menu div {
+  margin: 2.273vh 0 0 0;
+
+  display: flex;
+  justify-content: space-between;
+
+  align-items: center;
+  font-size: 1.876vh;
+  line-height: 2.144vh;
+}
+.main_field_settings_option_menu .main_field_settings_option_menu_el {
+  position: relative;
+
+  padding-right: 7.618vw;
+}
+
+.main_field_settings_option_menu span {
+  margin-left: 0.935vw;
+  display: inline-block;
+  min-width: 3.074vw;
+}
+.main_field_settings_option_menu_el_single {
+  margin: 2.273vh 0 0 0;
+}
+input[type="checkbox"] {
+  transform: scale(1.5);
+}
+.main_field_settings_option_menu input[type="text"] {
+  width: 12.63vw;
+  height: 5.217vh;
+
+  padding: 1.357vh 4.878vw 1.085vh 5.012vw;
+  background: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 5px;
+  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+  box-sizing: border-box;
+}
+#products {
+  max-width: 68.495vw;
   margin-top: 2.676vw;
   display: flex;
   justify-content: space-between;
