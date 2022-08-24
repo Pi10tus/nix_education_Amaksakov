@@ -1422,6 +1422,7 @@ const items = [
     },
   },
 ];
+
 const container = document.getElementById("products");
 
 items.forEach((element) => {
@@ -1432,7 +1433,7 @@ items.forEach((element) => {
   text +=
     '<img src="./img/' +
     element.imgUrl +
-    '" alt="apple-tv" width="200px" height="200px" />';
+    '" alt="apple-tv" class="products_item_img"/>';
   text += "<h2>" + element.name + "</h2>";
   text += "<p><b>" + element.orderInfo.inStock + "</b> left in stock</p>";
   text += "<p>Price: <b>" + element.price + "</b> $</p>";
@@ -1441,7 +1442,9 @@ items.forEach((element) => {
   text +=
     " <p><b>" +
     element.orderInfo.reviews +
-    "%</b> Positive reviews</p> <p><b>x</b></p> </div>";
+    "%</b> Positive reviews</p> <p><b>" +
+    Math.floor(Math.random() * element.orderInfo.inStock) +
+    "</b></p> </div>";
   text +=
     '<div> <p>Above avarage</p> <p>orders</p> </div> <img src="./img/icons/like_filled.svg" alt="like" /> </div> </div>';
   container.innerHTML += text;
