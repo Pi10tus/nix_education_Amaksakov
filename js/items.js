@@ -1456,11 +1456,23 @@ function changeDisplay(element) {
       break;
   }
 }
+function itemDisplay() {
+  var x = document.getElementById("itemInfo");
+  x.style.display = "flex";
+  var x1 = document.getElementById("itemInfoBack");
+  x1.style.display = "block";
+}
+function closeInfo() {
+  var x = document.getElementById("itemInfo");
+  x.style.display = "none";
+  var x1 = document.getElementById("itemInfoBack");
+  x1.style.display = "none";
+}
 const container = document.getElementById("products");
 
 items.forEach((element) => {
   let text = "";
-  text += '<div class="products_item"> ';
+  text += '<div class="products_item" onclick="itemDisplay()"> ';
   text +=
     '<img src="./img/icons/like_empty.svg" alt="like" class="products_item_like" />';
   text +=
