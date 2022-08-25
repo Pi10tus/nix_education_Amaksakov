@@ -1456,23 +1456,68 @@ function changeDisplay(element) {
       break;
   }
 }
-function itemDisplay() {
+function itemDisplay(element) {
   var x = document.getElementById("itemInfo");
   x.style.display = "flex";
   var x1 = document.getElementById("itemInfoBack");
   x1.style.display = "block";
+  let text = "";
+
+  text +=
+    '<div> <img src="./img/' +
+    items[element.id - 1].imgUrl +
+    '" alt="" class="modal_content_img" /> </div>';
+  text +=
+    " <div> <h2>" +
+    items[element.id - 1].name +
+    '</h2>  <p class="modal_content_review"> <img src="./img/icons/like_filled.svg" alt="like" />';
+  text +=
+    " <span><span><b> " +
+    items[element.id - 1].orderInfo.reviews +
+    "%</b> Positive reviews </span><span> Above avarage</span></span>";
+  text +=
+    '<span><span style="text-align: center"><b>' +
+    Math.floor(Math.random() * items[element.id - 1].orderInfo.inStock) +
+    "</b> </span><span> orders</span></span></p>";
+  text +=
+    '<p class="modal_content_info"> <p class="modal_content_info_el">Color: <b> ' +
+    items[element.id - 1].color +
+    '</b></p> <p class="modal_content_info_el">Operating System:<b>   ' +
+    items[element.id - 1].os +
+    '</b></p> <p class="modal_content_info_el">Chip:<b>   ' +
+    items[element.id - 1].chip.name +
+    '</b>  </p> <p class="modal_content_info_el">Height: <b> ' +
+    items[element.id - 1].size.height +
+    ' cm</b></p> <p class="modal_content_info_el">Width: <b> ' +
+    items[element.id - 1].size.width +
+    ' cm</b></p> <p class="modal_content_info_el">Depth: <b> ' +
+    items[element.id - 1].size.depth +
+    ' cm</b></p> <p class="modal_content_info_el">Weight: <b> ' +
+    items[element.id - 1].size.weight +
+    " g</b></p> </p>";
+  text +=
+    "</div> <div><h3>$ " +
+    items[element.id - 1].price +
+    '</h3> <p class="modal_content_stocks">Stocks: ' +
+    items[element.id - 1].orderInfo.inStock +
+    ' pcs.</p> <p class="modal_content_button">Add to cart</p> </div>';
+  x.innerHTML += text;
 }
 function closeInfo() {
   var x = document.getElementById("itemInfo");
   x.style.display = "none";
   var x1 = document.getElementById("itemInfoBack");
   x1.style.display = "none";
+  document.getElementById("itemInfo").innerHTML = "";
 }
 const container = document.getElementById("products");
 
 items.forEach((element) => {
   let text = "";
-  text += '<div class="products_item" onclick="itemDisplay()"> ';
+  text +=
+    '<div class="products_item" id="' +
+    element.id +
+    '" onclick="itemDisplay(this)"> ';
   text +=
     '<img src="./img/icons/like_empty.svg" alt="like" class="products_item_like" />';
   text +=
