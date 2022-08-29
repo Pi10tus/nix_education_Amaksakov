@@ -1465,15 +1465,15 @@ function itemDisplay(element) {
 
   text +=
     '<div> <img src="./img/' +
-    items[element.id - 1].imgUrl +
+    items[element.id].imgUrl +
     '" alt="" class="modal_content_img" /> </div>';
   text +=
     " <div> <h2>" +
-    items[element.id - 1].name +
+    items[element.id].name +
     '</h2>  <p class="modal_content_review"> <img src="./img/icons/like_filled.svg" alt="like" />';
   text +=
     " <span><span><b> " +
-    items[element.id - 1].orderInfo.reviews +
+    items[element.id].orderInfo.reviews +
     "%</b> Positive reviews </span><span> Above avarage</span></span>";
   text +=
     '<span><span style="text-align: center"><b>' +
@@ -1481,25 +1481,25 @@ function itemDisplay(element) {
     "</b> </span><span> orders</span></span></p>";
   text +=
     '<p class="modal_content_info"> <p class="modal_content_info_el">Color: <b> ' +
-    items[element.id - 1].color +
+    items[element.id].color +
     '</b></p> <p class="modal_content_info_el">Operating System:<b>   ' +
-    items[element.id - 1].os +
+    items[element.id].os +
     '</b></p> <p class="modal_content_info_el">Chip:<b>   ' +
-    items[element.id - 1].chip.name +
+    items[element.id].chip.name +
     '</b>  </p> <p class="modal_content_info_el">Height: <b> ' +
-    items[element.id - 1].size.height +
+    items[element.id].size.height +
     ' cm</b></p> <p class="modal_content_info_el">Width: <b> ' +
-    items[element.id - 1].size.width +
+    items[element.id].size.width +
     ' cm</b></p> <p class="modal_content_info_el">Depth: <b> ' +
-    items[element.id - 1].size.depth +
+    items[element.id].size.depth +
     ' cm</b></p> <p class="modal_content_info_el">Weight: <b> ' +
-    items[element.id - 1].size.weight +
+    items[element.id].size.weight +
     " g</b></p> </p>";
   text +=
     "</div> <div><h3>$ " +
-    items[element.id - 1].price +
+    items[element.id].price +
     '</h3> <p class="modal_content_stocks">Stocks: ' +
-    items[element.id - 1].orderInfo.inStock +
+    items[element.id].orderInfo.inStock +
     ' pcs.</p> <p class="modal_content_button">Add to cart</p> </div>';
   x.innerHTML += text;
 }
@@ -1511,31 +1511,37 @@ function closeInfo() {
   document.getElementById("itemInfo").innerHTML = "";
 }
 const container = document.getElementById("products");
-
-items.forEach((element) => {
-  let text = "";
-  text +=
-    '<div class="products_item" id="' +
-    element.id +
-    '" onclick="itemDisplay(this)"> ';
-  text +=
-    '<img src="./img/icons/like_empty.svg" alt="like" class="products_item_like" />';
-  text +=
-    '<img src="./img/' +
-    element.imgUrl +
-    '" alt="apple-tv" class="products_item_img"/>';
-  text += "<h2>" + element.name + "</h2>";
-  text += "<p><b>" + element.orderInfo.inStock + "</b> left in stock</p>";
-  text += "<p>Price: <b>" + element.price + "</b> $</p>";
-  text +=
-    '<div class="products_item_button">Add to cart</div> <div class="products_item_bottom"> <div>';
-  text +=
-    " <p><b>" +
-    element.orderInfo.reviews +
-    "%</b> Positive reviews</p> <p><b>" +
-    Math.floor(Math.random() * element.orderInfo.inStock) +
-    "</b></p> </div>";
-  text +=
-    '<div> <p>Above avarage</p> <p>orders</p> </div> <img src="./img/icons/like_filled.svg" alt="like" /> </div> </div>';
-  container.innerHTML += text;
-});
+function displayGoods(items) {
+  clearGoods();
+  items.forEach((element) => {
+    let text = "";
+    text +=
+      '<div class="products_item" id="' +
+      element.id +
+      '" onclick="itemDisplay(this)"> ';
+    text +=
+      '<img src="./img/icons/like_empty.svg" alt="like" class="products_item_like" />';
+    text +=
+      '<img src="./img/' +
+      element.imgUrl +
+      '" alt="apple-tv" class="products_item_img"/>';
+    text += "<h2>" + element.name + "</h2>";
+    text += "<p><b>" + element.orderInfo.inStock + "</b> left in stock</p>";
+    text += "<p>Price: <b>" + element.price + "</b> $</p>";
+    text +=
+      '<div class="products_item_button">Add to cart</div> <div class="products_item_bottom"> <div>';
+    text +=
+      " <p><b>" +
+      element.orderInfo.reviews +
+      "%</b> Positive reviews</p> <p><b>" +
+      Math.floor(Math.random() * element.orderInfo.inStock) +
+      "</b></p> </div>";
+    text +=
+      '<div> <p>Above avarage</p> <p>orders</p> </div> <img src="./img/icons/like_filled.svg" alt="like" /> </div> </div>';
+    container.innerHTML += text;
+  });
+}
+function clearGoods() {
+  container.innerHTML = "";
+}
+displayGoods(items);
