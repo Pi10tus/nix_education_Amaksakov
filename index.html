@@ -19,8 +19,42 @@
           width="120px"
           height="24.4px"
         />
-        <img src="./img/icons/cart.svg" alt="cart" width="30px" height="30px" />
+        <img
+          src="./img/icons/cart.svg"
+          class="cart_img"
+          alt="cart"
+          width="30px"
+          height="30px"
+          onclick="displayBacket();"
+        />
       </header>
+      <section id="backet_section">
+        <h3>Shopping Cart</h3>
+        <p>Checkout is almost done!</p>
+        <hr style="margin-top: 4.825vh" />
+        <div id="backet_items_list">
+          <!-- <div class="backet_items_list_el">
+            <img
+              src="./img/items/airpods-max.jpg"
+              alt=""
+              width="100px"
+              height="100px"
+            />
+            <span class="backet_title">Airpods</span>
+            <span class="backet_price">$600</span>
+            <span class="button_reduce"> <</span>
+            <span class="backet_number"> 4</span>
+            <span class="button_add"> ></span>
+            <span class="button_delete"> X</span>
+          </div>
+          <hr /> -->
+        </div>
+        <div class="total_info">
+          <span id="number_total">Total amount: <b> 0 ptc.</b> </span>
+          <span id="price_total">Total price: <b> 0</b> </span>
+        </div>
+        <div class="backet_buy_button">Buy</div>
+      </section>
       <img
         src="./img/banners/ipad_air_banner.jpg"
         alt="ipad_banner"
@@ -222,33 +256,33 @@
         </div>
         <section id="products">
           <!-- <div class="products_item">
-          <img
-            src="./img/icons/like_empty.svg"
-            alt="like"
-            class="products_item_like"
-          />
-          <img
-            src="./img/items/apple-tv.jpeg"
-            alt="apple-tv"
-            width="200px"
-            height="200px"
-          />
-          <h2>iPhone 11 PRO Max</h2>
-          <p><b>x</b> left in stock</p>
-          <p>Price: <b>x</b> $</p>
-          <div class="products_item_button">Add to cart</div>
-          <div class="products_item_bottom">
-            <div>
-              <p><b>77%</b> Positive reviews</p>
-              <p><b>527</b></p>
+            <img
+              src="./img/icons/like_empty.svg"
+              alt="like"
+              class="products_item_like"
+            />
+            <img
+              src="./img/items/apple-tv.jpeg"
+              alt="apple-tv"
+              width="200px"
+              height="200px"
+            />
+            <h2>iPhone 11 PRO Max</h2>
+            <p><b>x</b> left in stock</p>
+            <p>Price: <b>x</b> $</p>
+            <div class="products_item_button">Add to cart</div>
+            <div class="products_item_bottom">
+              <div>
+                <p><b>77%</b> Positive reviews</p>
+                <p><b>527</b></p>
+              </div>
+              <div>
+                <p>Above avarage</p>
+                <p>orders</p>
+              </div>
+              <img src="./img/icons/like_filled.svg" alt="like" />
             </div>
-            <div>
-              <p>Above avarage</p>
-              <p>orders</p>
-            </div>
-            <img src="./img/icons/like_filled.svg" alt="like" />
-          </div>
-        </div> -->
+          </div> -->
         </section>
       </div>
       <div id="itemInfoBack" class="modal" onclick="closeInfo()"></div>
@@ -291,5 +325,6 @@
     </main>
     <script src="./js/items.js"></script>
     <script src="./js/filters.js"></script>
+    <script src="./js/backet.js"></script>
   </body>
 </html>

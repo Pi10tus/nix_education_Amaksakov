@@ -432,49 +432,7 @@ const items = [
       reviews: 99, // процент положительных отзывов
     },
   },
-  {
-    id: 34,
-    category: "ipad",
-    imgUrl: "items/ipad-air.png",
-    name: "IPad Air",
-    display: 10.9, // дюймы
-    color: ["Silver", "Space Grey", "Rose Gold", "Green", "Sky Blue"],
-    price: 549, // доллары
-    chip: {
-      name: "A14 Bionic ",
-      cores: null,
-    },
-    ram: null, // Гб
-    storage: 64, // TB
-    touchId: true,
-    faceId: false,
-    wireless: ["Wi-Fi", "Bluetooth 5.0"],
-    camera: {
-      front: "720p FaceTime HD camera",
-      back: "Ultra Wide: 10MP",
-    },
-    audio: {
-      microphone:
-        "Dual microphones for calls, video recording, and audio recording",
-      speakers: "Stereo speakers",
-    },
-    size: {
-      height: "24.7", // cm
-      width: "17.8", // cm
-      depth: "0.6", // cm
-      weight: "0.458", // Кг
-    },
-    os: "macOS",
-    InTheBox: [
-      "iPad Air",
-      "USB-C Charge Cable (1 meter)",
-      "20W USB-C Power Adapter",
-    ],
-    orderInfo: {
-      inStock: 97, // кол-во едениц товара в наличии
-      reviews: 97, // процент положительных отзывов
-    },
-  },
+
   {
     id: 11,
     category: "ipad",
@@ -1421,6 +1379,49 @@ const items = [
       reviews: 5, // процент положительных отзывов
     },
   },
+  {
+    id: 34,
+    category: "ipad",
+    imgUrl: "items/ipad-air.png",
+    name: "IPad Air",
+    display: 10.9, // дюймы
+    color: ["Silver", "Space Grey", "Rose Gold", "Green", "Sky Blue"],
+    price: 549, // доллары
+    chip: {
+      name: "A14 Bionic ",
+      cores: null,
+    },
+    ram: null, // Гб
+    storage: 64, // TB
+    touchId: true,
+    faceId: false,
+    wireless: ["Wi-Fi", "Bluetooth 5.0"],
+    camera: {
+      front: "720p FaceTime HD camera",
+      back: "Ultra Wide: 10MP",
+    },
+    audio: {
+      microphone:
+        "Dual microphones for calls, video recording, and audio recording",
+      speakers: "Stereo speakers",
+    },
+    size: {
+      height: "24.7", // cm
+      width: "17.8", // cm
+      depth: "0.6", // cm
+      weight: "0.458", // Кг
+    },
+    os: "macOS",
+    InTheBox: [
+      "iPad Air",
+      "USB-C Charge Cable (1 meter)",
+      "20W USB-C Power Adapter",
+    ],
+    orderInfo: {
+      inStock: 97, // кол-во едениц товара в наличии
+      reviews: 97, // процент положительных отзывов
+    },
+  },
 ];
 function settingsDisplay() {
   var x = document.getElementById("mfs");
@@ -1457,51 +1458,56 @@ function changeDisplay(element) {
   }
 }
 function itemDisplay(element) {
-  var x = document.getElementById("itemInfo");
-  x.style.display = "flex";
-  var x1 = document.getElementById("itemInfoBack");
-  x1.style.display = "block";
-  let text = "";
+  if (
+    String(window.event.path[0].onclick) !=
+    "function onclick(event) {" + "\naddToCart(this)" + "\n}"
+  ) {
+    var x = document.getElementById("itemInfo");
+    x.style.display = "flex";
+    var x1 = document.getElementById("itemInfoBack");
+    x1.style.display = "block";
+    let text = "";
 
-  text +=
-    '<div> <img src="./img/' +
-    items[element.id].imgUrl +
-    '" alt="" class="modal_content_img" /> </div>';
-  text +=
-    " <div> <h2>" +
-    items[element.id].name +
-    '</h2>  <p class="modal_content_review"> <img src="./img/icons/like_filled.svg" alt="like" />';
-  text +=
-    " <span><span><b> " +
-    items[element.id].orderInfo.reviews +
-    "%</b> Positive reviews </span><span> Above avarage</span></span>";
-  text +=
-    '<span><span style="text-align: center"><b>' +
-    Math.floor(Math.random() * items[element.id - 1].orderInfo.inStock) +
-    "</b> </span><span> orders</span></span></p>";
-  text +=
-    '<p class="modal_content_info"> <p class="modal_content_info_el">Color: <b> ' +
-    items[element.id].color +
-    '</b></p> <p class="modal_content_info_el">Operating System:<b>   ' +
-    items[element.id].os +
-    '</b></p> <p class="modal_content_info_el">Chip:<b>   ' +
-    items[element.id].chip.name +
-    '</b>  </p> <p class="modal_content_info_el">Height: <b> ' +
-    items[element.id].size.height +
-    ' cm</b></p> <p class="modal_content_info_el">Width: <b> ' +
-    items[element.id].size.width +
-    ' cm</b></p> <p class="modal_content_info_el">Depth: <b> ' +
-    items[element.id].size.depth +
-    ' cm</b></p> <p class="modal_content_info_el">Weight: <b> ' +
-    items[element.id].size.weight +
-    " g</b></p> </p>";
-  text +=
-    "</div> <div><h3>$ " +
-    items[element.id].price +
-    '</h3> <p class="modal_content_stocks">Stocks: ' +
-    items[element.id].orderInfo.inStock +
-    ' pcs.</p> <p class="modal_content_button">Add to cart</p> </div>';
-  x.innerHTML += text;
+    text +=
+      '<div> <img src="./img/' +
+      items[element.id - 1].imgUrl +
+      '" alt="" class="modal_content_img" /> </div>';
+    text +=
+      " <div> <h2>" +
+      items[element.id - 1].name +
+      '</h2>  <p class="modal_content_review"> <img src="./img/icons/like_filled.svg" alt="like" />';
+    text +=
+      " <span><span><b> " +
+      items[element.id - 1].orderInfo.reviews +
+      "%</b> Positive reviews </span><span> Above avarage</span></span>";
+    text +=
+      '<span><span style="text-align: center"><b>' +
+      Math.floor(Math.random() * items[element.id - 1].orderInfo.inStock) +
+      "</b> </span><span> orders</span></span></p>";
+    text +=
+      '<p class="modal_content_info"> <p class="modal_content_info_el">Color: <b> ' +
+      items[element.id - 1].color +
+      '</b></p> <p class="modal_content_info_el">Operating System:<b>   ' +
+      items[element.id - 1].os +
+      '</b></p> <p class="modal_content_info_el">Chip:<b>   ' +
+      items[element.id - 1].chip.name +
+      '</b>  </p> <p class="modal_content_info_el">Height: <b> ' +
+      items[element.id - 1].size.height +
+      ' cm</b></p> <p class="modal_content_info_el">Width: <b> ' +
+      items[element.id - 1].size.width +
+      ' cm</b></p> <p class="modal_content_info_el">Depth: <b> ' +
+      items[element.id - 1].size.depth +
+      ' cm</b></p> <p class="modal_content_info_el">Weight: <b> ' +
+      items[element.id - 1].size.weight +
+      " g</b></p> </p>";
+    text +=
+      "</div> <div><h3>$ " +
+      items[element.id - 1].price +
+      '</h3> <p class="modal_content_stocks">Stocks: ' +
+      items[element.id - 1].orderInfo.inStock +
+      ' pcs.</p> <p class="modal_content_button">Add to cart</p> </div>';
+    x.innerHTML += text;
+  }
 }
 function closeInfo() {
   var x = document.getElementById("itemInfo");
@@ -1529,7 +1535,9 @@ function displayGoods(items) {
     text += "<p><b>" + element.orderInfo.inStock + "</b> left in stock</p>";
     text += "<p>Price: <b>" + element.price + "</b> $</p>";
     text +=
-      '<div class="products_item_button">Add to cart</div> <div class="products_item_bottom"> <div>';
+      '<div class="products_item_button"id="b_' +
+      element.id +
+      '" onclick="addToCart(this)">Add to cart</div> <div class="products_item_bottom"> <div>';
     text +=
       " <p><b>" +
       element.orderInfo.reviews +

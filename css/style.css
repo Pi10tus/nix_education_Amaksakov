@@ -13,13 +13,16 @@ main {
 
   align-items: center;
 }
+.cart_img:hover {
+  cursor: pointer;
+}
 header {
   width: 68.629vw;
   height: 3.679vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0;
+  margin: 2vh 0 0 0;
 }
 
 main img {
@@ -185,6 +188,9 @@ input[type="checkbox"] {
   border-radius: 5px;
   display: inline-block;
 }
+.products_item_button:hover {
+  cursor: pointer;
+}
 .products_item_bottom {
   position: absolute;
   bottom: 0;
@@ -344,4 +350,160 @@ input[type="checkbox"] {
   background-color: #0e49b5;
   border-radius: 5px;
   text-align: center;
+}
+#backet_section {
+  position: relative;
+  display: none;
+  width: 29.03vw;
+  height: fit-content;
+  padding: 3.217vh 0 2.949vh 0;
+  z-index: 1;
+  position: absolute;
+  top: 8.177vh;
+  right: 17.19vw;
+  background: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 5px;
+  filter: drop-shadow(0px 0px 25px rgba(0, 0, 0, 0.25));
+  box-sizing: border-box;
+}
+
+#backet_section h3 {
+  text-align: center;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 3.217vh;
+  line-height: 28px;
+}
+#backet_section p {
+  margin-top: 0.938vh;
+  text-align: center;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 2.144vh;
+  line-height: 19px;
+
+  color: #767272;
+}
+
+.total_info {
+  padding: 2.412vh 3.077vw;
+  height: 6.568vh;
+  background: #eaf6ff;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  color: #767272;
+  display: flex;
+  justify-content: space-between;
+}
+.backet_buy_button {
+  margin-top: 2.546vh;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  width: 16.722vw;
+  padding: 1.474vh 7.09vw;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 26px;
+
+  color: #ffffff;
+  background: #3c44b1;
+  border-radius: 10px;
+}
+.backet_buy_button:hover {
+  cursor: pointer;
+}
+.backet_items_list_el {
+  height: fit-content;
+  padding: 1.876vh 1.873vw;
+  position: relative;
+}
+.button_delete {
+  position: absolute;
+  top: 6.97vh;
+  right: 2.006vw;
+  padding-left: 0.334vw;
+  padding-right: 0.334vw;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 2.144vh;
+  line-height: 2.547vh;
+  background: rgba(248, 50, 69, 0.15);
+  border-radius: 2px;
+  color: #f83245;
+}
+.button_add,
+.button_reduce {
+  padding-left: 0.334vw;
+  padding-right: 0.334vw;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 2.144vh;
+  line-height: 2.547vh;
+  color: #ffffff;
+  background: #3c44b1;
+  border-radius: 2px;
+}
+.button_add {
+  position: absolute;
+  top: 6.97vh;
+  right: 5.016vw;
+}
+.button_reduce {
+  position: absolute;
+  top: 6.97vh;
+  right: 9.03vw;
+}
+.button_add:hover,
+.button_reduce:hover,
+.button_delete:hover {
+  cursor: pointer;
+}
+.backet_number {
+  position: absolute;
+  top: 6.97vh;
+  right: 7.2vw;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 2.68vh;
+  line-height: 3.083vh;
+
+  color: #4191ff;
+}
+.backet_title {
+  position: absolute;
+  top: 5.63vh;
+  left: 8.963vw;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.608vh;
+  line-height: 1.876vh;
+
+  color: #000000;
+}
+.backet_price {
+  position: absolute;
+  top: 8.847vh;
+  left: 8.963vw;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.608vh;
+  line-height: 1.876vh;
+  background: #eaf6ff;
+  border-radius: 3px;
+  padding: 0.402vh 0.602vw;
+  color: #4191ff;
 }
