@@ -1,65 +1,239 @@
 const calendar_items = [
-  { start: 0, duration: 15, title: "Exercise", day: 1 },
-  { start: 25, duration: 30, title: "Travel to work", day: 1 },
-  { start: 180, duration: 30, title: "Plan day", day: 1 },
-  { start: 0, duration: 15, title: "Exercise", day: 2 },
-  { start: 25, duration: 30, title: "Travel to work", day: 2 },
-  { start: 180, duration: 30, title: "Plan day", day: 2 },
-  { start: 0, duration: 15, title: "Exercise", day: 3 },
-  { start: 25, duration: 30, title: "Travel to work", day: 3 },
-  { start: 180, duration: 30, title: "Plan day", day: 3 },
-  { start: 0, duration: 15, title: "Exercise", day: 4 },
-  { start: 25, duration: 30, title: "Travel to work", day: 4 },
-  { start: 180, duration: 30, title: "Plan day", day: 4 },
-  { start: 0, duration: 15, title: "Exercise", day: 5 },
-  { start: 25, duration: 30, title: "Travel to work", day: 5 },
-  { start: 180, duration: 30, title: "Plan day", day: 5 },
-  { start: 0, duration: 15, title: "Exercise", day: 6 },
-  { start: 25, duration: 30, title: "Travel to work", day: 6 },
-  { start: 180, duration: 30, title: "Plan day", day: 6 },
-  { start: 0, duration: 15, title: "Exercise", day: 7 },
-  { start: 25, duration: 30, title: "Travel to work", day: 7 },
-  { start: 180, duration: 30, title: "Plan day", day: 7 },
+  { start: 0, duration: 15, title: "Exercise" },
+  { start: 25, duration: 30, title: "Travel to work" },
+  { start: 30, duration: 30, title: "Plan day" },
+  { start: 60, duration: 15, title: "Review yesterday's commits" },
+  { start: 100, duration: 15, title: "Code review" },
+  { start: 180, duration: 90, title: "Have lunch with John" },
+  { start: 360, duration: 30, title: "Skype call" },
+  { start: 370, duration: 45, title: "Follow up with designer" },
+  { start: 405, duration: 30, title: "Review yesterday's commits" },
 ];
 
 function displayCalendarItems(array) {
-  const x = document.getElementById("calendar_content");
-  console.log(x);
   let text = "";
+  let mar = 0;
   array.forEach((element) => {
-    text +=
-      '<div class="calendar_item" style = "height: calc(' +
-      element.duration +
-      "px * 75 / 30); position: absolute; top:calc(10.25vh + (" +
-      element.start.toFixed(2) / 100 +
-      " * 33.5vh));";
-    switch (element.day) {
-      case 1:
-        text += 'left:4vw; ">';
+    let x = document.getElementById("f1");
+    switch (true) {
+      case element.start >= 0 && element.start < 30:
+        text +=
+          '<div class="calendar_item" style = "height: calc(' +
+          element.duration +
+          "px * 100 / 30); margin-top:" +
+          element.start +
+          'px">';
         break;
-      case 2:
-        text += 'left:18.5vw; ">';
+      case element.start >= 30 && element.start < 60:
+        x = document.getElementById("f2");
+        mar = element.start - 30;
+
+        text +=
+          '<div class="calendar_item" style = "height: calc(' +
+          element.duration +
+          "px * 100 / 30); margin-top:" +
+          mar +
+          'px">';
         break;
-      case 3:
-        text += 'left:32.5vw; ">';
+      case element.start >= 60 && element.start < 90:
+        x = document.getElementById("f3");
+        mar = element.start - 60;
+
+        text +=
+          '<div class="calendar_item" style = "height: calc(' +
+          element.duration +
+          "px * 100 / 30); margin-top:" +
+          mar +
+          'px">';
         break;
-      case 4:
-        text += 'left:46.75vw; ">';
+      case element.start >= 90 && element.start < 120:
+        x = document.getElementById("f4");
+        mar = element.start - 90;
+
+        text +=
+          '<div class="calendar_item" style = "height: calc(' +
+          element.duration +
+          "px * 100 / 30); margin-top:" +
+          mar +
+          'px">';
         break;
-      case 5:
-        text += 'left:61vw; ">';
+      case element.start >= 120 && element.start < 150:
+        x = document.getElementById("f5");
+        mar = element.start - 120;
+
+        text +=
+          '<div class="calendar_item" style = "height: calc(' +
+          element.duration +
+          "px * 100 / 30); margin-top:" +
+          mar +
+          'px">';
         break;
-      case 6:
-        text += 'left:75vw; ">';
+      case element.start >= 150 && element.start < 180:
+        x = document.getElementById("f6");
+        mar = element.start - 150;
+
+        text +=
+          '<div class="calendar_item" style = "height: calc(' +
+          element.duration +
+          "px * 100 / 30); margin-top:" +
+          mar +
+          'px">';
         break;
-      case 7:
-        console.log("Oranges are $0.59 a pound.");
+      case element.start >= 180 && element.start < 210:
+        x = document.getElementById("f7");
+        mar = element.start - 180;
+        text +=
+          '<div class="calendar_item" style = "height: calc(' +
+          element.duration +
+          "px * 100 / 30); margin-top:" +
+          mar +
+          'px">';
+        break;
+      case element.start >= 210 && element.start < 240:
+        x = document.getElementById("f8");
+        mar = element.start - 210;
+        text +=
+          '<div class="calendar_item" style = "height: calc(' +
+          element.duration +
+          "px * 100 / 30); margin-top:" +
+          mar +
+          'px">';
+        break;
+      case element.start >= 240 && element.start < 270:
+        x = document.getElementById("f9");
+        mar = element.start - 240;
+        text +=
+          '<div class="calendar_item" style = "height: calc(' +
+          element.duration +
+          "px * 100 / 30); margin-top:" +
+          mar +
+          'px">';
+        break;
+      case element.start >= 270 && element.start < 300:
+        x = document.getElementById("f10");
+        mar = element.start - 270;
+        text +=
+          '<div class="calendar_item" style = "height: calc(' +
+          element.duration +
+          "px * 100 / 30); margin-top:" +
+          mar +
+          'px">';
+        break;
+      case element.start >= 300 && element.start < 330:
+        x = document.getElementById("f11");
+        mar = element.start - 300;
+        text +=
+          '<div class="calendar_item" style = "height: calc(' +
+          element.duration +
+          "px * 100 / 30); margin-top:" +
+          mar +
+          'px">';
+        break;
+      case element.start >= 330 && element.start < 360:
+        x = document.getElementById("f12");
+        mar = element.start - 330;
+        text +=
+          '<div class="calendar_item" style = "height: calc(' +
+          element.duration +
+          "px * 100 / 30); margin-top:" +
+          mar +
+          'px">';
+        break;
+      case element.start >= 360 && element.start < 390:
+        x = document.getElementById("f13");
+        mar = element.start - 360;
+        text +=
+          '<div class="calendar_item" style = "height: calc(' +
+          element.duration +
+          "px * 100 / 30); margin-top:" +
+          mar +
+          'px">';
+        break;
+      case element.start >= 390 && element.start < 420:
+        x = document.getElementById("f14");
+         mar = element.start - 390;
+         text +=
+           '<div class="calendar_item" style = "height: calc(' +
+           element.duration +
+           "px * 100 / 30); margin-top:" +
+           mar +
+           'px">';
+        break;
+      case element.start >= 420 && element.start < 450:
+        x = document.getElementById("f15");
+         mar = element.start - 420;
+         text +=
+           '<div class="calendar_item" style = "height: calc(' +
+           element.duration +
+           "px * 100 / 30); margin-top:" +
+           mar +
+           'px">';
+        break;
+      case element.start >= 450 && element.start < 480:
+        x = document.getElementById("f16");
+         mar = element.start - 450;
+         text +=
+           '<div class="calendar_item" style = "height: calc(' +
+           element.duration +
+           "px * 100 / 30); margin-top:" +
+           mar +
+           'px">';
+        break;
+      case element.start >= 480 && element.start < 510:
+        x = document.getElementById("f17");
+         mar = element.start - 480;
+         text +=
+           '<div class="calendar_item" style = "height: calc(' +
+           element.duration +
+           "px * 100 / 30); margin-top:" +
+           mar +
+           'px">';
+        break;
+      case element.start >= 510 && element.start < 540:
+        x = document.getElementById("f18");
+         mar = element.start - 510;
+         text +=
+           '<div class="calendar_item" style = "height: calc(' +
+           element.duration +
+           "px * 100 / 30); margin-top:" +
+           mar +
+           'px">';
+        break;
+      case element.start >= 540 && element.start < 570:
+        x = document.getElementById("f19");
+         mar = element.start - 540;
+         text +=
+           '<div class="calendar_item" style = "height: calc(' +
+           element.duration +
+           "px * 100 / 30); margin-top:" +
+           mar +
+           'px">';
+        break;
+      case element.start >= 570 && element.start < 600:
+        x = document.getElementById("f20");
+         mar = element.start - 570;
+         text +=
+           '<div class="calendar_item" style = "height: calc(' +
+           element.duration +
+           "px * 100 / 30); margin-top:" +
+           mar +
+           'px">';
+        break;
+      case element.start >= 600 && element.start < 630:
+        x = document.getElementById("f21");
+         mar = element.start - 600;
+         text +=
+           '<div class="calendar_item" style = "height: calc(' +
+           element.duration +
+           "px * 100 / 30); margin-top:" +
+           mar +
+           'px">';
         break;
     }
 
     text += element.title + "</div> ";
+
     x.innerHTML += text;
-    console.log(text);
     text = "";
   });
 }

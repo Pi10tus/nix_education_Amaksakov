@@ -1,23 +1,23 @@
 * {
   overflow-x: hidden;
 }
+
 th {
   border: solid lightgray 0.25px;
 
   width: 175px;
-  height: 75px;
-  max-height: 75px;
-}
-table {
-  box-sizing: border-box;
-}
-#calendar_content {
-  position: relative;
+  height: 100px;
+  max-height: 100px;
+  width: 100%;
+  display: block;
+  overflow: visible;
 }
 tr {
   display: flex;
-  justify-content: space-around;
+}
+table {
   width: 100vw;
+  margin-top: 2.5vh;
 }
 .time {
   margin: 0;
@@ -28,14 +28,21 @@ tr {
   font-weight: 200;
   color: grey;
   display: flex;
+  width: 10vw;
 }
 body {
   padding: 1.5vh 0;
 }
-
+.folder {
+  display: flex;
+  position: absolute;
+  width: 100%;
+}
 .calendar_item {
   background-color: #e2ecf5;
-  border: solid #6e9ecf 0.25px;
-  width: 100px;
-  z-index: 1;
+  border-left: solid #6e9ecf 0.25px;
+  width: 100%;
+  min-width: 200px;
+  text-align: left;
+  display: inline;
 }
