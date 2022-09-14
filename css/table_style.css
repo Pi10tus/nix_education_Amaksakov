@@ -41,7 +41,7 @@ body {
 .calendar_item {
   background-color: #e2ecf5;
   border-left: solid #6e9ecf 0.25px;
-  width: 100%;
+
   min-width: 200px;
   text-align: left;
   display: inline;
