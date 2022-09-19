@@ -18,6 +18,8 @@ tr {
 table {
   width: 100vw;
   margin-top: 2.5vh;
+  box-sizing: border-box;
+  margin-left: 1vw;
 }
 .time {
   margin: 0;
@@ -45,6 +47,83 @@ body {
   min-width: 200px;
   text-align: left;
   display: inline;
+}
+.calendar_item:hover {
+  cursor: pointer;
+}
+.modal {
+  display: none;
+
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.65);
+  text-align: center;
+}
+.modal:hover {
+  cursor: pointer;
+}
+.modal_content {
+  display: none;
+  z-index: 2;
+
+  justify-content: space-between;
+  /* align-items: center; */
+  background-color: #ffffff;
+
+  width: 68.495vw;
+  height: 50vh;
+  border: 1px solid #888;
+  box-sizing: border-box;
+  border: 1px solid #e2e2e2;
+  box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.4);
+  border-radius: 5px;
+  position: fixed;
+  margin: 7.5% auto;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+.modal_content_row {
+  width: 100vw;
+  position: relative;
+}
+.modal_content_row input {
+  display: inline-block;
+  width: 90%;
+  border-radius: 5px;
+  position: absolute;
+  right: 0;
+}
+.button_safe,
+.button_delete {
+  width: 100px;
+  color: #ffffff;
+  padding: 8px 10px 10px 10px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  text-align: center;
+  border-radius: 5px;
+  height: fit-content;
+  position: absolute;
+  bottom: 20px;
+}
+.button_safe {
+  background-color: #6e9ecf;
+  left: 20px;
+}
+.button_safe:hover {
+  cursor: pointer;
+}
+.button_delete {
+  background-color: crimson;
+  right: 20px;
 }
 .add_section {
   width: 60vw;

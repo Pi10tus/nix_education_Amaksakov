@@ -9,101 +9,127 @@
     <link rel="stylesheet" href="./css/table_style.css" />
   </head>
   <body>
-    <h1>Workday</h1>
-    <table>
-      <tr>
-        <th class="time">8:00</th>
-        <th>
-          <div class="folder" id="f1"></div>
-        </th>
-      </tr>
-      <tr>
-        <th class="time">8:30</th>
-        <th><div class="folder" id="f2"></div></th>
-      </tr>
-      <tr>
-        <th class="time">9:00</th>
-        <th><div class="folder" id="f3"></div></th>
-      </tr>
-      <tr>
-        <th class="time">9:30</th>
-        <th><div class="folder" id="f4"></div></th>
-      </tr>
-      <tr>
-        <th class="time">10:00</th>
-        <th><div class="folder" id="f5"></div></th>
-      </tr>
-      <tr>
-        <th class="time">10:30</th>
-        <th><div class="folder" id="f6"></div></th>
-      </tr>
-      <tr>
-        <th class="time">11:00</th>
-        <th><div class="folder" id="f7"></div></th>
-      </tr>
-      <tr>
-        <th class="time">11:30</th>
-        <th><div class="folder" id="f8"></div></th>
-      </tr>
-      <tr>
-        <th class="time">12:00</th>
-        <th><div class="folder" id="f9"></div></th>
-      </tr>
-      <tr>
-        <th class="time">12:30</th>
-        <th><div class="folder" id="f10"></div></th>
-      </tr>
-      <tr>
-        <th class="time">12:00</th>
-        <th><div class="folder" id="f11"></div></th>
-      </tr>
-      <tr>
-        <th class="time">12:30</th>
-        <th><div class="folder" id="f12"></div></th>
-      </tr>
-      <tr>
-        <th class="time">13:00</th>
-        <th><div class="folder" id="f13"></div></th>
-      </tr>
-      <tr>
-        <th class="time">13:30</th>
-        <th><div class="folder" id="f14"></div></th>
-      </tr>
-      <tr>
-        <th class="time">14:00</th>
-        <th><div class="folder" id="f15"></div></th>
-      </tr>
-      <tr>
-        <th class="time">14:30</th>
-        <th><div class="folder" id="f16"></div></th>
-      </tr>
-      <tr>
-        <th class="time">15:00</th>
-        <th><div class="folder" id="f17"></div></th>
-      </tr>
-      <tr>
-        <th class="time">15:30</th>
-        <th><div class="folder" id="f18"></div></th>
-      </tr>
-      <tr>
-        <th class="time">16:00</th>
-        <th><div class="folder" id="f19"></div></th>
-      </tr>
-      <tr>
-        <th class="time">16:30</th>
-        <th><div class="folder" id="f20"></div></th>
-      </tr>
-      <tr>
-        <th class="time">17:00</th>
-        <th><div class="folder" id="f21"></div></th>
-      </tr>
-    </table>
-    <section class="add_section">
-      <input type="text" id="add_start" placeholder="Start: 0-600" />
-      <input type="text" id="add_minute" placeholder="Duration: *in minutes*" />
-      <input type="text" id="add_title" placeholder="Title" />
-      <input type="button" value="Add" onclick="addElement()" />
-    </section>
-    <script src="./js/calendar_items.js"></script>
+    <main>
+      <h1>Workday</h1>
+      <table>
+        <tr>
+          <th class="time">8:00</th>
+          <th>
+            <div class="folder" id="f1"></div>
+          </th>
+        </tr>
+        <tr>
+          <th class="time">8:30</th>
+          <th><div class="folder" id="f2"></div></th>
+        </tr>
+        <tr>
+          <th class="time">9:00</th>
+          <th><div class="folder" id="f3"></div></th>
+        </tr>
+        <tr>
+          <th class="time">9:30</th>
+          <th><div class="folder" id="f4"></div></th>
+        </tr>
+        <tr>
+          <th class="time">10:00</th>
+          <th><div class="folder" id="f5"></div></th>
+        </tr>
+        <tr>
+          <th class="time">10:30</th>
+          <th><div class="folder" id="f6"></div></th>
+        </tr>
+        <tr>
+          <th class="time">11:00</th>
+          <th><div class="folder" id="f7"></div></th>
+        </tr>
+        <tr>
+          <th class="time">11:30</th>
+          <th><div class="folder" id="f8"></div></th>
+        </tr>
+        <tr>
+          <th class="time">12:00</th>
+          <th><div class="folder" id="f9"></div></th>
+        </tr>
+        <tr>
+          <th class="time">12:30</th>
+          <th><div class="folder" id="f10"></div></th>
+        </tr>
+        <tr>
+          <th class="time">12:00</th>
+          <th><div class="folder" id="f11"></div></th>
+        </tr>
+        <tr>
+          <th class="time">12:30</th>
+          <th><div class="folder" id="f12"></div></th>
+        </tr>
+        <tr>
+          <th class="time">13:00</th>
+          <th><div class="folder" id="f13"></div></th>
+        </tr>
+        <tr>
+          <th class="time">13:30</th>
+          <th><div class="folder" id="f14"></div></th>
+        </tr>
+        <tr>
+          <th class="time">14:00</th>
+          <th><div class="folder" id="f15"></div></th>
+        </tr>
+        <tr>
+          <th class="time">14:30</th>
+          <th><div class="folder" id="f16"></div></th>
+        </tr>
+        <tr>
+          <th class="time">15:00</th>
+          <th><div class="folder" id="f17"></div></th>
+        </tr>
+        <tr>
+          <th class="time">15:30</th>
+          <th><div class="folder" id="f18"></div></th>
+        </tr>
+        <tr>
+          <th class="time">16:00</th>
+          <th><div class="folder" id="f19"></div></th>
+        </tr>
+        <tr>
+          <th class="time">16:30</th>
+          <th><div class="folder" id="f20"></div></th>
+        </tr>
+        <tr>
+          <th class="time">17:00</th>
+          <th><div class="folder" id="f21"></div></th>
+        </tr>
+      </table>
+      <section class="add_section">
+        <input type="text" id="add_start" placeholder="Start: 0-600" />
+        <input
+          type="text"
+          id="add_minute"
+          placeholder="Duration: *in minutes*"
+        />
+        <input type="text" id="add_title" placeholder="Title" />
+        <input type="button" value="Add" onclick="addElement()" />
+      </section>
+
+      <div id="itemInfoBack" class="modal" onclick="closeInfo()"></div>
+      <div id="itemInfo" class="modal_content">
+        <div class="modal_content_row">
+          <span>Title: </span><input id="text_title" type="text" />
+        </div>
+
+        <div class="modal_content_row">
+          <span>Start: </span><input id="text_time" type="text" />
+        </div>
+        <div class="modal_content_row">
+          <span>Duration: </span><input id="text_duration" type="text" />
+        </div>
+
+        <div id="safe" class="button_safe" onclick="safeItem(this)">Safe</div>
+        <div id="del" class="button_delete" onclick="deleteItem(this)">
+          Delete
+        </div>
+      </div>
+
+      <script src="./js/calendar_items.js"></script>
+    </main>
   </body>
 </html>

@@ -25,14 +25,14 @@ header {
   margin: 2vh 0 0 0;
 }
 
-main img {
+/* main img {
   margin: 0;
-}
+} */
 .ipad_banner {
   width: 68.495vw;
   height: 34.247vw;
 }
-main input[type="text"] {
+/* main input[type="text"] {
   position: relative;
   padding-left: 4.548vw;
   margin-top: 1.003vh;
@@ -47,7 +47,7 @@ main input[type="text"] {
   line-height: 2.815vh;
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
   border-radius: 5px;
-}
+} */
 .filter_img {
   position: absolute;
   width: 2.675vw;
@@ -232,7 +232,7 @@ input[type="checkbox"] {
   width: 1.605vw;
   height: 3.217vh;
 }
-.modal {
+/* .modal {
   display: none;
   position: fixed;
   z-index: 1;
@@ -250,7 +250,7 @@ input[type="checkbox"] {
   justify-content: space-between;
   align-items: center;
 
-  z-index: 2;
+  z-index: 0;
   position: fixed;
 
   background-color: #ffffff;
@@ -350,7 +350,7 @@ input[type="checkbox"] {
   background-color: #0e49b5;
   border-radius: 5px;
   text-align: center;
-}
+} */
 #backet_section {
   position: relative;
   display: none;
@@ -426,7 +426,7 @@ input[type="checkbox"] {
   padding: 1.876vh 1.873vw;
   position: relative;
 }
-.button_delete {
+/* .button_delete {
   position: absolute;
   top: 6.97vh;
   right: 2.006vw;
@@ -440,7 +440,7 @@ input[type="checkbox"] {
   background: rgba(248, 50, 69, 0.15);
   border-radius: 2px;
   color: #f83245;
-}
+} */
 .button_add,
 .button_reduce {
   padding-left: 0.334vw;

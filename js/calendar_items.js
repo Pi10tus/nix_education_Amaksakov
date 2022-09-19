@@ -1,19 +1,62 @@
 const calendar_items = [
-  { start: 0, duration: 15, title: "Exercise" },
-  { start: 25, duration: 30, title: "Travel to work" },
-  { start: 30, duration: 30, title: "Plan day" },
-  { start: 60, duration: 15, title: "Review yesterday's commits" },
-  { start: 100, duration: 15, title: "Code review" },
-  { start: 180, duration: 90, title: "Have lunch with John" },
-  { start: 360, duration: 30, title: "Skype call" },
-  { start: 370, duration: 45, title: "Follow up with designer" },
-  { start: 405, duration: 30, title: "Review yesterday's commits" },
+  { start: 0, duration: 15, title: "Exercise", id: "el_1" },
+  { start: 25, duration: 30, title: "Travel to work", id: "el_2" },
+  { start: 30, duration: 30, title: "Plan day", id: "el_3" },
+  { start: 60, duration: 15, title: "Review yesterday's commits", id: "el_4" },
+  { start: 100, duration: 15, title: "Code review", id: "el_5" },
+  { start: 180, duration: 90, title: "Have lunch with John", id: "el_6" },
+  { start: 360, duration: 30, title: "Skype call", id: "el_7" },
+  { start: 370, duration: 45, title: "Follow up with designer", id: "el_8" },
+  { start: 405, duration: 30, title: "Review yesterday's commits", id: "el_9" },
 ];
 
+function deleteItem(element) {
+  for (let i = 0; i < calendar_items.length; i++) {
+    if (calendar_items[i] === element.value) {
+      calendar_items.splice(i, 1);
+      break;
+    }
+  }
+  closeInfo();
+  displayCalendarItems(calendar_items);
+}
+function safeItem(element) {
+  element.value.start = document.getElementById("text_time").value;
+  element.value.duration = document.getElementById("text_duration").value;
+  element.value.title = document.getElementById("text_title").value;
+  closeInfo();
+  displayCalendarItems(calendar_items);
+}
 function displayCalendarItems(array) {
+  let folders = document.getElementsByClassName("folder");
+
+  Array.prototype.forEach.call(folders, function (el) {
+    el.innerHTML = "";
+  });
+
   array.forEach((element) => {
     addFinalElement(element);
   });
+}
+function modalItem(element) {
+  const el = calendar_items.find((obj) => obj.id === element.id);
+  let x = document.getElementById("itemInfoBack");
+  x.style.display = "block";
+  let x1 = document.getElementById("itemInfo");
+  x1.style.display = "flex";
+  let safe_b = document.getElementById("safe");
+  let delete_b = document.getElementById("del");
+  document.getElementById("text_title").value = el.title;
+  document.getElementById("text_time").value = el.start;
+  document.getElementById("text_duration").value = el.duration;
+  safe_b.value = el;
+  delete_b.value = el;
+}
+function closeInfo() {
+  let x = document.getElementById("itemInfoBack");
+  x.style.display = "none";
+  let x1 = document.getElementById("itemInfo");
+  x1.style.display = "none";
 }
 function addElement() {
   let x = document.getElementById("add_start");
@@ -23,6 +66,10 @@ function addElement() {
     start: Number(x.value),
     duration: Number(x1.value),
     title: x2.value,
+    id:
+      "el_" +
+      (Number(calendar_items[calendar_items.length - 1].id.match(/\d+/)[0]) +
+        1),
   };
   calendar_items.push(el);
   addFinalElement(el);
@@ -34,7 +81,9 @@ function addFinalElement(element) {
   switch (true) {
     case element.start >= 0 && element.start < 30:
       text +=
-        '<div class="calendar_item" style = "height: calc(' +
+        '<div class="calendar_item" onclick="modalItem(this)" id="' +
+        element.id +
+        '"  style = "height: calc(' +
         element.duration +
         "px * 100 / 30); margin-top:" +
         element.start +
@@ -45,7 +94,9 @@ function addFinalElement(element) {
       mar = element.start - 30;
 
       text +=
-        '<div class="calendar_item" style = "height: calc(' +
+        '<div class="calendar_item" onclick="modalItem(this)"  id="' +
+        element.id +
+        '" style = "height: calc(' +
         element.duration +
         "px * 100 / 30); margin-top:" +
         mar +
@@ -56,7 +107,9 @@ function addFinalElement(element) {
       mar = element.start - 60;
 
       text +=
-        '<div class="calendar_item" style = "height: calc(' +
+        '<div class="calendar_item" onclick="modalItem(this)"  id="' +
+        element.id +
+        '" style = "height: calc(' +
         element.duration +
         "px * 100 / 30); margin-top:" +
         mar +
@@ -67,7 +120,9 @@ function addFinalElement(element) {
       mar = element.start - 90;
 
       text +=
-        '<div class="calendar_item" style = "height: calc(' +
+        '<div class="calendar_item" onclick="modalItem(this)"  id="' +
+        element.id +
+        '" style = "height: calc(' +
         element.duration +
         "px * 100 / 30); margin-top:" +
         mar +
@@ -78,7 +133,9 @@ function addFinalElement(element) {
       mar = element.start - 120;
 
       text +=
-        '<div class="calendar_item" style = "height: calc(' +
+        '<div class="calendar_item" onclick="modalItem(this)"  id="' +
+        element.id +
+        '" style = "height: calc(' +
         element.duration +
         "px * 100 / 30); margin-top:" +
         mar +
@@ -89,7 +146,9 @@ function addFinalElement(element) {
       mar = element.start - 150;
 
       text +=
-        '<div class="calendar_item" style = "height: calc(' +
+        '<div class="calendar_item" onclick="modalItem(this)"  id="' +
+        element.id +
+        '" style = "height: calc(' +
         element.duration +
         "px * 100 / 30); margin-top:" +
         mar +
@@ -99,7 +158,9 @@ function addFinalElement(element) {
       x = document.getElementById("f7");
       mar = element.start - 180;
       text +=
-        '<div class="calendar_item" style = "height: calc(' +
+        '<div class="calendar_item" onclick="modalItem(this)"  id="' +
+        element.id +
+        '" style = "height: calc(' +
         element.duration +
         "px * 100 / 30); margin-top:" +
         mar +
@@ -109,7 +170,9 @@ function addFinalElement(element) {
       x = document.getElementById("f8");
       mar = element.start - 210;
       text +=
-        '<div class="calendar_item" style = "height: calc(' +
+        '<div class="calendar_item" onclick="modalItem(this)"  id="' +
+        element.id +
+        '" style = "height: calc(' +
         element.duration +
         "px * 100 / 30); margin-top:" +
         mar +
@@ -119,7 +182,9 @@ function addFinalElement(element) {
       x = document.getElementById("f9");
       mar = element.start - 240;
       text +=
-        '<div class="calendar_item" style = "height: calc(' +
+        '<div class="calendar_item" onclick="modalItem(this)"  id="' +
+        element.id +
+        '" style = "height: calc(' +
         element.duration +
         "px * 100 / 30); margin-top:" +
         mar +
@@ -129,7 +194,9 @@ function addFinalElement(element) {
       x = document.getElementById("f10");
       mar = element.start - 270;
       text +=
-        '<div class="calendar_item" style = "height: calc(' +
+        '<div class="calendar_item" onclick="modalItem(this)"  id="' +
+        element.id +
+        '" style = "height: calc(' +
         element.duration +
         "px * 100 / 30); margin-top:" +
         mar +
@@ -139,7 +206,9 @@ function addFinalElement(element) {
       x = document.getElementById("f11");
       mar = element.start - 300;
       text +=
-        '<div class="calendar_item" style = "height: calc(' +
+        '<div class="calendar_item" onclick="modalItem(this)"  id="' +
+        element.id +
+        '" style = "height: calc(' +
         element.duration +
         "px * 100 / 30); margin-top:" +
         mar +
@@ -149,7 +218,9 @@ function addFinalElement(element) {
       x = document.getElementById("f12");
       mar = element.start - 330;
       text +=
-        '<div class="calendar_item" style = "height: calc(' +
+        '<div class="calendar_item" onclick="modalItem(this)"  id="' +
+        element.id +
+        '" style = "height: calc(' +
         element.duration +
         "px * 100 / 30); margin-top:" +
         mar +
@@ -159,7 +230,9 @@ function addFinalElement(element) {
       x = document.getElementById("f13");
       mar = element.start - 360;
       text +=
-        '<div class="calendar_item" style = "height: calc(' +
+        '<div class="calendar_item" onclick="modalItem(this)"  id="' +
+        element.id +
+        '" style = "height: calc(' +
         element.duration +
         "px * 100 / 30); margin-top:" +
         mar +
@@ -169,7 +242,9 @@ function addFinalElement(element) {
       x = document.getElementById("f14");
       mar = element.start - 390;
       text +=
-        '<div class="calendar_item" style = "height: calc(' +
+        '<div class="calendar_item" onclick="modalItem(this)"  id="' +
+        element.id +
+        '" style = "height: calc(' +
         element.duration +
         "px * 100 / 30); margin-top:" +
         mar +
@@ -179,7 +254,9 @@ function addFinalElement(element) {
       x = document.getElementById("f15");
       mar = element.start - 420;
       text +=
-        '<div class="calendar_item" style = "height: calc(' +
+        '<div class="calendar_item" onclick="modalItem(this)"  id="' +
+        element.id +
+        '" style = "height: calc(' +
         element.duration +
         "px * 100 / 30); margin-top:" +
         mar +
@@ -189,7 +266,9 @@ function addFinalElement(element) {
       x = document.getElementById("f16");
       mar = element.start - 450;
       text +=
-        '<div class="calendar_item" style = "height: calc(' +
+        '<div class="calendar_item" onclick="modalItem(this)"  id="' +
+        element.id +
+        '" style = "height: calc(' +
         element.duration +
         "px * 100 / 30); margin-top:" +
         mar +
@@ -199,7 +278,9 @@ function addFinalElement(element) {
       x = document.getElementById("f17");
       mar = element.start - 480;
       text +=
-        '<div class="calendar_item" style = "height: calc(' +
+        '<div class="calendar_item" onclick="modalItem()"  id="' +
+        element.id +
+        '" style = "height: calc(' +
         element.duration +
         "px * 100 / 30); margin-top:" +
         mar +
@@ -209,7 +290,9 @@ function addFinalElement(element) {
       x = document.getElementById("f18");
       mar = element.start - 510;
       text +=
-        '<div class="calendar_item" style = "height: calc(' +
+        '<div class="calendar_item" onclick="modalItem()"  id="' +
+        element.id +
+        '" style = "height: calc(' +
         element.duration +
         "px * 100 / 30); margin-top:" +
         mar +
@@ -219,7 +302,9 @@ function addFinalElement(element) {
       x = document.getElementById("f19");
       mar = element.start - 540;
       text +=
-        '<div class="calendar_item" style = "height: calc(' +
+        '<div class="calendar_item" onclick="modalItem(this)"  id="' +
+        element.id +
+        '" style = "height: calc(' +
         element.duration +
         "px * 100 / 30); margin-top:" +
         mar +
@@ -229,7 +314,9 @@ function addFinalElement(element) {
       x = document.getElementById("f20");
       mar = element.start - 570;
       text +=
-        '<div class="calendar_item" style = "height: calc(' +
+        '<div class="calendar_item" onclick="modalItem(this)"  id="' +
+        element.id +
+        '" style = "height: calc(' +
         element.duration +
         "px * 100 / 30); margin-top:" +
         mar +
@@ -239,7 +326,9 @@ function addFinalElement(element) {
       x = document.getElementById("f21");
       mar = element.start - 600;
       text +=
-        '<div class="calendar_item" style = "height: calc(' +
+        '<div class="calendar_item" onclick="modalItem(this)"  id="' +
+        element.id +
+        '" style = "height: calc(' +
         element.duration +
         "px * 100 / 30); margin-top:" +
         mar +
