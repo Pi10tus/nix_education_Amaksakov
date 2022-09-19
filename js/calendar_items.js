@@ -80,18 +80,23 @@ function addFinalElement(element) {
   let x = document.getElementById("f1");
   switch (true) {
     case element.start >= 0 && element.start < 30:
+      if (element.start != 0) {
+        mar = (element.start * 100) / 30;
+      } else mar = 0;
       text +=
         '<div class="calendar_item" onclick="modalItem(this)" id="' +
         element.id +
         '"  style = "height: calc(' +
         element.duration +
         "px * 100 / 30); margin-top:" +
-        element.start +
+        mar +
         'px">';
       break;
     case element.start >= 30 && element.start < 60:
       x = document.getElementById("f2");
-      mar = element.start - 30;
+      if (element.start != 30) {
+        mar = ((element.start - 30) * 100) / 30;
+      } else mar = 0;
 
       text +=
         '<div class="calendar_item" onclick="modalItem(this)"  id="' +
@@ -104,8 +109,9 @@ function addFinalElement(element) {
       break;
     case element.start >= 60 && element.start < 90:
       x = document.getElementById("f3");
-      mar = element.start - 60;
-
+      if (element.start != 60) {
+        mar = ((element.start - 60) * 100) / 30;
+      } else mar = 0;
       text +=
         '<div class="calendar_item" onclick="modalItem(this)"  id="' +
         element.id +
@@ -117,7 +123,9 @@ function addFinalElement(element) {
       break;
     case element.start >= 90 && element.start < 120:
       x = document.getElementById("f4");
-      mar = element.start - 90;
+      if (element.start != 90) {
+        mar = ((element.start - 90) * 100) / 30;
+      } else mar = 0;
 
       text +=
         '<div class="calendar_item" onclick="modalItem(this)"  id="' +
@@ -130,7 +138,9 @@ function addFinalElement(element) {
       break;
     case element.start >= 120 && element.start < 150:
       x = document.getElementById("f5");
-      mar = element.start - 120;
+      if (element.start != 120) {
+        mar = ((element.start - 120) * 100) / 30;
+      } else mar = 0;
 
       text +=
         '<div class="calendar_item" onclick="modalItem(this)"  id="' +
@@ -143,7 +153,9 @@ function addFinalElement(element) {
       break;
     case element.start >= 150 && element.start < 180:
       x = document.getElementById("f6");
-      mar = element.start - 150;
+      if (element.start != 150) {
+        mar = ((element.start - 150) * 100) / 30;
+      } else mar = 0;
 
       text +=
         '<div class="calendar_item" onclick="modalItem(this)"  id="' +
@@ -156,7 +168,9 @@ function addFinalElement(element) {
       break;
     case element.start >= 180 && element.start < 210:
       x = document.getElementById("f7");
-      mar = element.start - 180;
+      if (element.start != 180) {
+        mar = ((element.start - 180) * 100) / 30;
+      } else mar = 0;
       text +=
         '<div class="calendar_item" onclick="modalItem(this)"  id="' +
         element.id +
@@ -168,7 +182,9 @@ function addFinalElement(element) {
       break;
     case element.start >= 210 && element.start < 240:
       x = document.getElementById("f8");
-      mar = element.start - 210;
+      if (element.start != 210) {
+        mar = ((element.start - 210) * 100) / 30;
+      } else mar = 0;
       text +=
         '<div class="calendar_item" onclick="modalItem(this)"  id="' +
         element.id +
@@ -180,7 +196,9 @@ function addFinalElement(element) {
       break;
     case element.start >= 240 && element.start < 270:
       x = document.getElementById("f9");
-      mar = element.start - 240;
+      if (element.start != 240) {
+        mar = ((element.start - 240) * 100) / 30;
+      } else mar = 0;
       text +=
         '<div class="calendar_item" onclick="modalItem(this)"  id="' +
         element.id +
@@ -192,7 +210,9 @@ function addFinalElement(element) {
       break;
     case element.start >= 270 && element.start < 300:
       x = document.getElementById("f10");
-      mar = element.start - 270;
+      if (element.start != 270) {
+        mar = ((element.start - 270) * 100) / 30;
+      } else mar = 0;
       text +=
         '<div class="calendar_item" onclick="modalItem(this)"  id="' +
         element.id +
@@ -204,7 +224,9 @@ function addFinalElement(element) {
       break;
     case element.start >= 300 && element.start < 330:
       x = document.getElementById("f11");
-      mar = element.start - 300;
+      if (element.start != 300) {
+        mar = ((element.start - 300) * 100) / 30;
+      } else mar = 0;
       text +=
         '<div class="calendar_item" onclick="modalItem(this)"  id="' +
         element.id +
@@ -216,7 +238,9 @@ function addFinalElement(element) {
       break;
     case element.start >= 330 && element.start < 360:
       x = document.getElementById("f12");
-      mar = element.start - 330;
+      if (element.start != 330) {
+        mar = ((element.start - 330) * 100) / 30;
+      } else mar = 0;
       text +=
         '<div class="calendar_item" onclick="modalItem(this)"  id="' +
         element.id +
@@ -228,7 +252,9 @@ function addFinalElement(element) {
       break;
     case element.start >= 360 && element.start < 390:
       x = document.getElementById("f13");
-      mar = element.start - 360;
+      if (element.start != 360) {
+        mar = ((element.start - 360) * 100) / 30;
+      } else mar = 0;
       text +=
         '<div class="calendar_item" onclick="modalItem(this)"  id="' +
         element.id +
@@ -240,7 +266,9 @@ function addFinalElement(element) {
       break;
     case element.start >= 390 && element.start < 420:
       x = document.getElementById("f14");
-      mar = element.start - 390;
+      if (element.start != 390) {
+        mar = ((element.start - 390) * 100) / 30;
+      } else mar = 0;
       text +=
         '<div class="calendar_item" onclick="modalItem(this)"  id="' +
         element.id +
@@ -252,7 +280,9 @@ function addFinalElement(element) {
       break;
     case element.start >= 420 && element.start < 450:
       x = document.getElementById("f15");
-      mar = element.start - 420;
+      if (element.start != 420) {
+        mar = ((element.start - 420) * 100) / 30;
+      } else mar = 0;
       text +=
         '<div class="calendar_item" onclick="modalItem(this)"  id="' +
         element.id +
@@ -264,7 +294,9 @@ function addFinalElement(element) {
       break;
     case element.start >= 450 && element.start < 480:
       x = document.getElementById("f16");
-      mar = element.start - 450;
+      if (element.start != 450) {
+        mar = ((element.start - 450) * 100) / 30;
+      } else mar = 0;
       text +=
         '<div class="calendar_item" onclick="modalItem(this)"  id="' +
         element.id +
@@ -276,7 +308,9 @@ function addFinalElement(element) {
       break;
     case element.start >= 480 && element.start < 510:
       x = document.getElementById("f17");
-      mar = element.start - 480;
+      if (element.start != 480) {
+        mar = ((element.start - 480) * 100) / 30;
+      } else mar = 0;
       text +=
         '<div class="calendar_item" onclick="modalItem()"  id="' +
         element.id +
@@ -288,7 +322,9 @@ function addFinalElement(element) {
       break;
     case element.start >= 510 && element.start < 540:
       x = document.getElementById("f18");
-      mar = element.start - 510;
+      if (element.start != 510) {
+        mar = ((element.start - 510) * 100) / 30;
+      } else mar = 0;
       text +=
         '<div class="calendar_item" onclick="modalItem()"  id="' +
         element.id +
@@ -300,7 +336,9 @@ function addFinalElement(element) {
       break;
     case element.start >= 540 && element.start < 570:
       x = document.getElementById("f19");
-      mar = element.start - 540;
+      if (element.start != 540) {
+        mar = ((element.start - 540) * 100) / 30;
+      } else mar = 0;
       text +=
         '<div class="calendar_item" onclick="modalItem(this)"  id="' +
         element.id +
@@ -312,7 +350,9 @@ function addFinalElement(element) {
       break;
     case element.start >= 570 && element.start < 600:
       x = document.getElementById("f20");
-      mar = element.start - 570;
+      if (element.start != 570) {
+        mar = ((element.start - 570) * 100) / 30;
+      } else mar = 0;
       text +=
         '<div class="calendar_item" onclick="modalItem(this)"  id="' +
         element.id +
@@ -324,7 +364,9 @@ function addFinalElement(element) {
       break;
     case element.start >= 600 && element.start < 630:
       x = document.getElementById("f21");
-      mar = element.start - 600;
+      if (element.start != 0) {
+        mar = ((element.start - 600) * 100) / 30;
+      } else mar = 0;
       text +=
         '<div class="calendar_item" onclick="modalItem(this)"  id="' +
         element.id +
