@@ -75,312 +75,94 @@ function addElement() {
   addFinalElement(el);
 }
 function addFinalElement(element) {
-  let text = "";
-  let mar = 0;
   let x = document.getElementById("f1");
   switch (true) {
     case element.start >= 0 && element.start < 30:
-      if (element.start != 0) {
-        mar = (element.start * 100) / 30;
-      } else mar = 0;
-      text +=
-        '<div class="calendar_item" onclick="modalItem(this)" id="' +
-        element.id +
-        '"  style = "height: calc(' +
-        element.duration +
-        "px * 100 / 30); margin-top:" +
-        mar +
-        'px">';
+      addHtml("f1", 0, element);
       break;
+
     case element.start >= 30 && element.start < 60:
-      x = document.getElementById("f2");
-      if (element.start != 30) {
-        mar = ((element.start - 30) * 100) / 30;
-      } else mar = 0;
-
-      text +=
-        '<div class="calendar_item" onclick="modalItem(this)"  id="' +
-        element.id +
-        '" style = "height: calc(' +
-        element.duration +
-        "px * 100 / 30); margin-top:" +
-        mar +
-        'px">';
+      addHtml("f2", 30, element);
       break;
+
     case element.start >= 60 && element.start < 90:
-      x = document.getElementById("f3");
-      if (element.start != 60) {
-        mar = ((element.start - 60) * 100) / 30;
-      } else mar = 0;
-      text +=
-        '<div class="calendar_item" onclick="modalItem(this)"  id="' +
-        element.id +
-        '" style = "height: calc(' +
-        element.duration +
-        "px * 100 / 30); margin-top:" +
-        mar +
-        'px">';
+      addHtml("f3", 60, element);
       break;
-    case element.start >= 90 && element.start < 120:
-      x = document.getElementById("f4");
-      if (element.start != 90) {
-        mar = ((element.start - 90) * 100) / 30;
-      } else mar = 0;
 
-      text +=
-        '<div class="calendar_item" onclick="modalItem(this)"  id="' +
-        element.id +
-        '" style = "height: calc(' +
-        element.duration +
-        "px * 100 / 30); margin-top:" +
-        mar +
-        'px">';
+    case element.start >= 90 && element.start < 120:
+      addHtml("f4", 90, element);
       break;
     case element.start >= 120 && element.start < 150:
-      x = document.getElementById("f5");
-      if (element.start != 120) {
-        mar = ((element.start - 120) * 100) / 30;
-      } else mar = 0;
-
-      text +=
-        '<div class="calendar_item" onclick="modalItem(this)"  id="' +
-        element.id +
-        '" style = "height: calc(' +
-        element.duration +
-        "px * 100 / 30); margin-top:" +
-        mar +
-        'px">';
+      addHtml("f5", 120, element);
       break;
     case element.start >= 150 && element.start < 180:
-      x = document.getElementById("f6");
-      if (element.start != 150) {
-        mar = ((element.start - 150) * 100) / 30;
-      } else mar = 0;
-
-      text +=
-        '<div class="calendar_item" onclick="modalItem(this)"  id="' +
-        element.id +
-        '" style = "height: calc(' +
-        element.duration +
-        "px * 100 / 30); margin-top:" +
-        mar +
-        'px">';
+      addHtml("f6", 150, element);
       break;
     case element.start >= 180 && element.start < 210:
-      x = document.getElementById("f7");
-      if (element.start != 180) {
-        mar = ((element.start - 180) * 100) / 30;
-      } else mar = 0;
-      text +=
-        '<div class="calendar_item" onclick="modalItem(this)"  id="' +
-        element.id +
-        '" style = "height: calc(' +
-        element.duration +
-        "px * 100 / 30); margin-top:" +
-        mar +
-        'px">';
+      addHtml("f7", 180, element);
       break;
     case element.start >= 210 && element.start < 240:
-      x = document.getElementById("f8");
-      if (element.start != 210) {
-        mar = ((element.start - 210) * 100) / 30;
-      } else mar = 0;
-      text +=
-        '<div class="calendar_item" onclick="modalItem(this)"  id="' +
-        element.id +
-        '" style = "height: calc(' +
-        element.duration +
-        "px * 100 / 30); margin-top:" +
-        mar +
-        'px">';
+      addHtml("f8", 210, element);
       break;
     case element.start >= 240 && element.start < 270:
-      x = document.getElementById("f9");
-      if (element.start != 240) {
-        mar = ((element.start - 240) * 100) / 30;
-      } else mar = 0;
-      text +=
-        '<div class="calendar_item" onclick="modalItem(this)"  id="' +
-        element.id +
-        '" style = "height: calc(' +
-        element.duration +
-        "px * 100 / 30); margin-top:" +
-        mar +
-        'px">';
+      addHtml("f9", 240, element);
       break;
     case element.start >= 270 && element.start < 300:
-      x = document.getElementById("f10");
-      if (element.start != 270) {
-        mar = ((element.start - 270) * 100) / 30;
-      } else mar = 0;
-      text +=
-        '<div class="calendar_item" onclick="modalItem(this)"  id="' +
-        element.id +
-        '" style = "height: calc(' +
-        element.duration +
-        "px * 100 / 30); margin-top:" +
-        mar +
-        'px">';
+      addHtml("f10", 270, element);
       break;
     case element.start >= 300 && element.start < 330:
-      x = document.getElementById("f11");
-      if (element.start != 300) {
-        mar = ((element.start - 300) * 100) / 30;
-      } else mar = 0;
-      text +=
-        '<div class="calendar_item" onclick="modalItem(this)"  id="' +
-        element.id +
-        '" style = "height: calc(' +
-        element.duration +
-        "px * 100 / 30); margin-top:" +
-        mar +
-        'px">';
+      addHtml("f11", 300, element);
       break;
     case element.start >= 330 && element.start < 360:
-      x = document.getElementById("f12");
-      if (element.start != 330) {
-        mar = ((element.start - 330) * 100) / 30;
-      } else mar = 0;
-      text +=
-        '<div class="calendar_item" onclick="modalItem(this)"  id="' +
-        element.id +
-        '" style = "height: calc(' +
-        element.duration +
-        "px * 100 / 30); margin-top:" +
-        mar +
-        'px">';
+      addHtml("f12", 330, element);
       break;
     case element.start >= 360 && element.start < 390:
-      x = document.getElementById("f13");
-      if (element.start != 360) {
-        mar = ((element.start - 360) * 100) / 30;
-      } else mar = 0;
-      text +=
-        '<div class="calendar_item" onclick="modalItem(this)"  id="' +
-        element.id +
-        '" style = "height: calc(' +
-        element.duration +
-        "px * 100 / 30); margin-top:" +
-        mar +
-        'px">';
+      addHtml("f13", 360, element);
+
       break;
     case element.start >= 390 && element.start < 420:
-      x = document.getElementById("f14");
-      if (element.start != 390) {
-        mar = ((element.start - 390) * 100) / 30;
-      } else mar = 0;
-      text +=
-        '<div class="calendar_item" onclick="modalItem(this)"  id="' +
-        element.id +
-        '" style = "height: calc(' +
-        element.duration +
-        "px * 100 / 30); margin-top:" +
-        mar +
-        'px">';
+      addHtml("f14", 390, element);
       break;
     case element.start >= 420 && element.start < 450:
-      x = document.getElementById("f15");
-      if (element.start != 420) {
-        mar = ((element.start - 420) * 100) / 30;
-      } else mar = 0;
-      text +=
-        '<div class="calendar_item" onclick="modalItem(this)"  id="' +
-        element.id +
-        '" style = "height: calc(' +
-        element.duration +
-        "px * 100 / 30); margin-top:" +
-        mar +
-        'px">';
+      addHtml("f15", 420, element);
       break;
     case element.start >= 450 && element.start < 480:
-      x = document.getElementById("f16");
-      if (element.start != 450) {
-        mar = ((element.start - 450) * 100) / 30;
-      } else mar = 0;
-      text +=
-        '<div class="calendar_item" onclick="modalItem(this)"  id="' +
-        element.id +
-        '" style = "height: calc(' +
-        element.duration +
-        "px * 100 / 30); margin-top:" +
-        mar +
-        'px">';
+      addHtml("f16", 450, element);
       break;
     case element.start >= 480 && element.start < 510:
-      x = document.getElementById("f17");
-      if (element.start != 480) {
-        mar = ((element.start - 480) * 100) / 30;
-      } else mar = 0;
-      text +=
-        '<div class="calendar_item" onclick="modalItem()"  id="' +
-        element.id +
-        '" style = "height: calc(' +
-        element.duration +
-        "px * 100 / 30); margin-top:" +
-        mar +
-        'px">';
+      addHtml("f17", 480, element);
       break;
     case element.start >= 510 && element.start < 540:
-      x = document.getElementById("f18");
-      if (element.start != 510) {
-        mar = ((element.start - 510) * 100) / 30;
-      } else mar = 0;
-      text +=
-        '<div class="calendar_item" onclick="modalItem()"  id="' +
-        element.id +
-        '" style = "height: calc(' +
-        element.duration +
-        "px * 100 / 30); margin-top:" +
-        mar +
-        'px">';
+      addHtml("f18", 510, element);
       break;
     case element.start >= 540 && element.start < 570:
-      x = document.getElementById("f19");
-      if (element.start != 540) {
-        mar = ((element.start - 540) * 100) / 30;
-      } else mar = 0;
-      text +=
-        '<div class="calendar_item" onclick="modalItem(this)"  id="' +
-        element.id +
-        '" style = "height: calc(' +
-        element.duration +
-        "px * 100 / 30); margin-top:" +
-        mar +
-        'px">';
+      addHtml("f19", 540, element);
       break;
     case element.start >= 570 && element.start < 600:
-      x = document.getElementById("f20");
-      if (element.start != 570) {
-        mar = ((element.start - 570) * 100) / 30;
-      } else mar = 0;
-      text +=
-        '<div class="calendar_item" onclick="modalItem(this)"  id="' +
-        element.id +
-        '" style = "height: calc(' +
-        element.duration +
-        "px * 100 / 30); margin-top:" +
-        mar +
-        'px">';
+      addHtml("f20", 570, element);
       break;
     case element.start >= 600 && element.start < 630:
-      x = document.getElementById("f21");
-      if (element.start != 0) {
-        mar = ((element.start - 600) * 100) / 30;
-      } else mar = 0;
-      text +=
-        '<div class="calendar_item" onclick="modalItem(this)"  id="' +
-        element.id +
-        '" style = "height: calc(' +
-        element.duration +
-        "px * 100 / 30); margin-top:" +
-        mar +
-        'px">';
+      addHtml("f21", 600, element);
       break;
   }
-
+}
+function addHtml(id, timestart, element) {
+  let x = document.getElementById(id);
+  let mar = 0;
+  if (element.start != 0) {
+    mar = ((element.start - timestart) * 100) / 30;
+  }
+  let text = "";
+  text +=
+    '<div class="calendar_item" onclick="modalItem(this)"  id="' +
+    element.id +
+    '" style = "height: calc(' +
+    element.duration +
+    "px * 100 / 30); margin-top:" +
+    mar +
+    'px">';
   text += element.title + "</div> ";
 
   x.innerHTML += text;
-  text = "";
 }
 displayCalendarItems(calendar_items);
