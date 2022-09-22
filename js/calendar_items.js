@@ -1,13 +1,55 @@
 const calendar_items = [
-  { start: 0, duration: 15, title: "Exercise", id: "el_1" },
-  { start: 25, duration: 30, title: "Travel to work", id: "el_2" },
-  { start: 30, duration: 30, title: "Plan day", id: "el_3" },
-  { start: 60, duration: 15, title: "Review yesterday's commits", id: "el_4" },
-  { start: 100, duration: 15, title: "Code review", id: "el_5" },
-  { start: 180, duration: 90, title: "Have lunch with John", id: "el_6" },
-  { start: 360, duration: 30, title: "Skype call", id: "el_7" },
-  { start: 370, duration: 45, title: "Follow up with designer", id: "el_8" },
-  { start: 405, duration: 30, title: "Review yesterday's commits", id: "el_9" },
+  { start: 0, duration: 15, title: "Exercise", id: "el_1", color: "#e2ecf5" },
+  {
+    start: 25,
+    duration: 30,
+    title: "Travel to work",
+    id: "el_2",
+    color: "#e2ecf5",
+  },
+  { start: 30, duration: 30, title: "Plan day", id: "el_3", color: "#e2ecf5" },
+  {
+    start: 60,
+    duration: 15,
+    title: "Review yesterday's commits",
+    id: "el_4",
+    color: "#e2ecf5",
+  },
+  {
+    start: 100,
+    duration: 15,
+    title: "Code review",
+    id: "el_5",
+    color: "#e2ecf5",
+  },
+  {
+    start: 180,
+    duration: 90,
+    title: "Have lunch with John",
+    id: "el_6",
+    color: "#e2ecf5",
+  },
+  {
+    start: 360,
+    duration: 30,
+    title: "Skype call",
+    id: "el_7",
+    color: "#e2ecf5",
+  },
+  {
+    start: 370,
+    duration: 45,
+    title: "Follow up with designer",
+    id: "el_8",
+    color: "#e2ecf5",
+  },
+  {
+    start: 405,
+    duration: 30,
+    title: "Review yesterday's commits",
+    id: "el_9",
+    color: "#e2ecf5",
+  },
 ];
 
 function deleteItem(element) {
@@ -24,6 +66,7 @@ function safeItem(element) {
   element.value.start = document.getElementById("text_time").value;
   element.value.duration = document.getElementById("text_duration").value;
   element.value.title = document.getElementById("text_title").value;
+  element.value.color = document.getElementById("text_color").value;
   closeInfo();
   displayCalendarItems(calendar_items);
 }
@@ -49,6 +92,7 @@ function modalItem(element) {
   document.getElementById("text_title").value = el.title;
   document.getElementById("text_time").value = el.start;
   document.getElementById("text_duration").value = el.duration;
+  document.getElementById("text_color").value = el.color;
   safe_b.value = el;
   delete_b.value = el;
 }
@@ -62,6 +106,7 @@ function addElement() {
   let x = document.getElementById("add_start");
   let x1 = document.getElementById("add_minute");
   let x2 = document.getElementById("add_title");
+  let x3 = document.getElementById("add_color");
   let el = {
     start: Number(x.value),
     duration: Number(x1.value),
@@ -70,7 +115,9 @@ function addElement() {
       "el_" +
       (Number(calendar_items[calendar_items.length - 1].id.match(/\d+/)[0]) +
         1),
+    color: x3.value,
   };
+
   calendar_items.push(el);
   addFinalElement(el);
 }
@@ -160,7 +207,9 @@ function addHtml(id, timestart, element) {
     element.duration +
     "px * 100 / 30); margin-top:" +
     mar +
-    'px">';
+    "px; background: " +
+    element.color +
+    '">';
   text += element.title + "</div> ";
 
   x.innerHTML += text;
