@@ -11,7 +11,6 @@
     "type": "git",
     "url": "git+https://github.com/Pi10tus/nix_education_Amaksakov.git"
   },
-  "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
@@ -19,7 +18,6 @@
   },
   "homepage": "https://github.com/Pi10tus/nix_education_Amaksakov#readme",
   "dependencies": {
-    "body-parser": "^1.20.0",
-    "express": "^4.18.1"
+    "csvtojson": "^2.0.10"
   }
 }
