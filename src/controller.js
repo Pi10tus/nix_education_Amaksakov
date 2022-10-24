@@ -1,18 +1,17 @@
 const fs = require("fs");
 const path = require("path");
 
-const contactsDisplayAll = () => {
+const getContacts = () => {
   const data = fs.readFileSync(path.join(__dirname, "contacts.json"));
   return JSON.parse(data);
 };
+const contacts = getContacts();
 
 const contactDisById = (id) => {
-  const contacts = contactsDisplayAll();
   return contacts.find((c) => c.id.toString() === id);
 };
 
 const addContact = (body) => {
-  const contacts = contactsDisplayAll();
   const contact = { ...body, id: Date.now() };
   contacts.push(contact);
   fs.writeFileSync(
@@ -23,7 +22,6 @@ const addContact = (body) => {
 };
 
 const updateContact = (id, body) => {
-  const contacts = contactsDisplayAll();
   const index = contacts.findIndex((c) => c.id.toString() === id);
   if (index < 0) return null;
   contacts[index] = { ...contacts[index], ...body };
@@ -35,10 +33,9 @@ const updateContact = (id, body) => {
 };
 
 const deleteContact = (id) => {
-  const contacts = contactsDisplayAll();
   const index = contacts.findIndex((c) => c.id.toString() === id);
   if (index < 0) return null;
-  const d = contacts.splice(index, 1);
+  const d = contacts.splice(index, -1);
   fs.writeFileSync(
     path.join(__dirname, "contacts.json"),
     JSON.stringify(contacts, 2, 2)
@@ -46,7 +43,7 @@ const deleteContact = (id) => {
   return d;
 };
 module.exports = {
-  contactsDisplayAll,
+  getContacts,
   contactDisById,
   addContact,
   updateContact,
