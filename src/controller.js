@@ -33,9 +33,10 @@ const updateContact = (id, body) => {
 };
 
 const deleteContact = (id) => {
+  console.log(id);
   const index = contacts.findIndex((c) => c.id.toString() === id);
   if (index < 0) return null;
-  const d = contacts.splice(index, -1);
+  const d = contacts.splice(index, 1);
   fs.writeFileSync(
     path.join(__dirname, "contacts.json"),
     JSON.stringify(contacts, 2, 2)
