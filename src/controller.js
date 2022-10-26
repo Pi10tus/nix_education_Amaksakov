@@ -1,19 +1,20 @@
 const fs = require("fs");
 const path = require("path");
 
-const getContacts = () => {
-  const data = fs.readFileSync(path.join(__dirname, "contacts.json"));
-  return JSON.parse(data);
-};
-const contacts = getContacts();
+// const getContacts = () => {
+//   const data = fs.readFileSync(path.join(__dirname, "contacts.json"));
 
-const contactDisById = (id) => {
-  return contacts.find((c) => c.id.toString() === id);
+//   return JSON.parse(data);
+// };
+// const contacts = getContacts();
+
+const contactDisById = (id, data) => {
+  return data.find((c) => c.id.toString() === id);
 };
 
-const addContact = (body) => {
+const addContact = (body, data) => {
   const contact = { ...body, id: Date.now() };
-  contacts.push(contact);
+  data.push(contact);
   fs.writeFileSync(
     path.join(__dirname, "contacts.json"),
     JSON.stringify(contacts, 2, 2)
@@ -21,30 +22,30 @@ const addContact = (body) => {
   return contact;
 };
 
-const updateContact = (id, body) => {
-  const index = contacts.findIndex((c) => c.id.toString() === id);
+const updateContact = (id, body, data) => {
+  const index = data.findIndex((c) => c.id.toString() === id);
   if (index < 0) return null;
-  contacts[index] = { ...contacts[index], ...body };
+  data[index] = { ...data[index], ...body };
   fs.writeFileSync(
     path.join(__dirname, "contacts.json"),
-    JSON.stringify(contacts, 2, 2)
+    JSON.stringify(data, 2, 2)
   );
-  return contacts[index];
+  return data[index];
 };
 
-const deleteContact = (id) => {
+const deleteContact = (id, data) => {
   console.log(id);
-  const index = contacts.findIndex((c) => c.id.toString() === id);
+  const index = data.findIndex((c) => c.id.toString() === id);
   if (index < 0) return null;
-  const d = contacts.splice(index, 1);
+  const d = data.splice(index, 1);
   fs.writeFileSync(
     path.join(__dirname, "contacts.json"),
-    JSON.stringify(contacts, 2, 2)
+    JSON.stringify(data, 2, 2)
   );
   return d;
 };
 module.exports = {
-  getContacts,
+  // getContacts,
   contactDisById,
   addContact,
   updateContact,
