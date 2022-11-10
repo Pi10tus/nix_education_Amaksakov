@@ -1,28 +1,88 @@
 {
+  
   "name": "js",
+  
   "version": "1.0.0",
+  
   "description": "",
+  
   "main": "index.js",
+  
   "scripts": {
-    "start": "nodemon app.js"
+  
+    
+  "start": "nodemon app.js"
+  
   },
+  
   "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Pi10tus/nix_education_Amaksakov.git"
+  
+    
+  "type": "git",
+  
+    
+  "url": "git+https://github.com/Pi10tus/nix_education_Amaksakov.git"
+  
   },
+  
   "keywords": [],
+  
   "author": "",
+  
   "license": "ISC",
+  
   "bugs": {
-    "url": "https://github.com/Pi10tus/nix_education_Amaksakov/issues"
+  
+    
+  "url": "https://github.com/Pi10tus/nix_education_Amaksakov/issues"
+  
   },
+  
   "homepage": "https://github.com/Pi10tus/nix_education_Amaksakov#readme",
+  
   "dependencies": {
-    "bcryptjs": "^2.4.3",
-    "express": "^4.18.2",
-    "express-validator": "^6.14.2",
-    "jsonwebtoken": "^8.5.1",
-    "mongoose": "^6.7.1",
-    "nodemon": "^2.0.20"
+  
+    
+  "@mongodb-js/zstd": "^1.0.0",
+  
+    
+  "bcryptjs": "^2.4.3",
+  
+    
+  "browserify": "^17.0.0",
+  
+    
+  "express": "^4.18.2",
+  
+    
+  "express-validator": "^6.14.2",
+  
+    
+  "js-base64": "^3.7.2",
+  
+    
+  "jsonwebtoken": "^8.5.1",
+  
+    
+  "mongodb": "^4.11.0",
+  
+    
+  "mongoose": "^6.7.1",
+  
+    
+  "node-fetch": "^3.2.10",
+  
+    
+  "nodemon": "^2.0.20",
+  
+    
+  "os-browserify": "^0.3.0",
+  
+    
+  "requirejs": "^2.3.6",
+  
+    
+  "vows": "^0.8.3"
+  
   }
 }

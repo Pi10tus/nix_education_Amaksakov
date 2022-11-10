@@ -8,12 +8,15 @@ function displayBacket() {
 function addToCart(element) {
   const backet = document.getElementById("backet_section");
   backet.style.display = "block";
-  if (!backet_items.includes(items[element.id.replace(/[^\d.]/g, "") - 1])) {
-    backet_items.push(items[element.id.replace(/[^\d.]/g, "") - 1]);
+
+  const mainel = items.find((el) => "b_" + el._id == element.id);
+
+  if (!backet_items.includes(mainel)) {
+    backet_items.push(mainel);
     Object.assign(backet_items[backet_items.length - 1], { number: 1 });
   } else {
     backet_items.forEach((el) => {
-      if (el === items[element.id.replace(/[^\d.]/g, "") - 1]) {
+      if (el === mainel) {
         el.number += 1;
       }
     });
@@ -46,16 +49,16 @@ function insertIntoBacket(items) {
     text += '<span class="backet_price">$' + element.price + "</span>";
     text +=
       '<span class="button_reduce" onclick="reduceNumber(this)" id="r_' +
-      element.id +
+      element._id +
       '"> <</span>';
     text += '<span class="backet_number">' + element.number + "</span>";
     text +=
       '<span class="button_add" onclick="addNumber(this)" id="a_' +
-      element.id +
+      element._id +
       '"> ></span>';
     text +=
       '<span class="button_delete" onclick="deleteFromBacket(this)" id="d_' +
-      element.id +
+      element._id +
       '"> X</span>';
     text += " </div> <hr />";
     field.innerHTML += text;
@@ -71,7 +74,7 @@ function insertIntoBacket(items) {
 }
 function deleteFromBacket(element) {
   for (let i = 0; i < backet_items.length; i++) {
-    if (element.id.replace(/[^\d.]/g, "") == backet_items[i].id) {
+    if (element.id == "d_"+backet_items[i]._id) {
       backet_items.splice(i, 1);
       insertIntoBacket(backet_items);
       break;
@@ -80,7 +83,7 @@ function deleteFromBacket(element) {
 }
 function addNumber(element) {
   for (let i = 0; i < backet_items.length; i++) {
-    if (element.id.replace(/[^\d.]/g, "") == backet_items[i].id) {
+     if (element.id == "a_"+backet_items[i]._id) {
       backet_items[i].number += 1;
       insertIntoBacket(backet_items);
       break;
@@ -89,7 +92,7 @@ function addNumber(element) {
 }
 function reduceNumber(element) {
   for (let i = 0; i < backet_items.length; i++) {
-    if (element.id.replace(/[^\d.]/g, "") == backet_items[i].id) {
+   if (element.id == "r_"+backet_items[i]._id) {
       if (backet_items[i].number > 1) {
         backet_items[i].number -= 1;
         insertIntoBacket(backet_items);

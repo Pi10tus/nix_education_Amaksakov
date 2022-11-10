@@ -1,5 +1,6 @@
 const User = require("./models/User");
 const Role = require("./models/Role");
+const items = require("./js/item_schema");
 const bcrypt = require("bcryptjs");
 const { validationResult } = require("express-validator");
 const jwt = require("jsonwebtoken");
@@ -40,6 +41,7 @@ class authController {
   async login(req, res) {
     try {
       const { username, password } = req.body;
+
       const user = await User.findOne({ username });
       if (!user) {
         res.status(400).json({ message: `User ${user} not found` });
@@ -59,6 +61,12 @@ class authController {
     try {
       const users = await User.find();
       res.json(users);
+    } catch (e) {}
+  }
+  async getItems(req, res) {
+    try {
+      const goods = await items.find();
+      res.json(goods);
     } catch (e) {}
   }
 }

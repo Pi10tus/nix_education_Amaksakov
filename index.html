@@ -8,6 +8,7 @@
     />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>MacOutlet</title>
+    <!-- <script src="./libs/require.js"></script> -->
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
@@ -285,6 +286,42 @@
           </div> -->
         </section>
       </div>
+      <div id="authModal" class="modal" style="display: flex">
+        <div class="modal_content_auth">
+          <div class="modal_content_auth_fields">
+            <input
+              id="usrLog"
+              type="text"
+              placeholder="Enter login"
+              name=""
+              id=""
+            />
+            <input
+              id="usrPass"
+              type="password"
+              placeholder="Enter password"
+              name=""
+              id=""
+            />
+          </div>
+          <div class="modal_content_auth_buttons">
+            <div
+              id="authBtn"
+              onclick="authFunction()"
+              class="modal_content_auth_button"
+            >
+              Authorization
+            </div>
+            <div
+              id="regBtn"
+              onclick="regFunction()"
+              class="modal_content_auth_button"
+            >
+              Registration
+            </div>
+          </div>
+        </div>
+      </div>
       <div id="itemInfoBack" class="modal" onclick="closeInfo()"></div>
       <div id="itemInfo" class="modal_content">
         <!-- <div>
@@ -323,8 +360,9 @@
       </div> -->
       </div>
     </main>
-    <!-- <script src="./js/user.js"></script> -->
     <script src="./js/items.js"></script>
+    <script src="./js/authentification.js"></script>
+
     <script src="./js/filters.js"></script>
     <script src="./js/backet.js"></script>
   </body>

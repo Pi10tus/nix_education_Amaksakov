@@ -12,5 +12,5 @@ router.post(
 );
 router.post("/login", controller.login);
 router.get("/users", controller.getUsers);
-
+router.get("/items", controller.getItems)
 module.exports = router;
