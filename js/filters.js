@@ -179,3 +179,22 @@ function displayFilter(items) {
   displayGoods(new_items);
   return new_items;
 }
+const devSearch = document.getElementById("devSearch");
+devSearch.addEventListener("keydown", function (e) {
+  if (e.code === "Enter") {
+    filterSeatch(items);
+  }
+});
+
+function filterSeatch(items) {
+  const new_items = [];
+
+  const itemName = document.getElementById("devSearch").value;
+
+  for (let i = 0; i < items.length; i++) {
+    if (items[i].name.includes(itemName)) {
+      new_items.push(items[i]);
+    }
+  }
+  displayGoods(new_items);
+}
