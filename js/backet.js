@@ -74,7 +74,7 @@ function insertIntoBacket(items) {
 }
 function deleteFromBacket(element) {
   for (let i = 0; i < backet_items.length; i++) {
-    if (element.id == "d_"+backet_items[i]._id) {
+    if (element.id == "d_" + backet_items[i]._id) {
       backet_items.splice(i, 1);
       insertIntoBacket(backet_items);
       break;
@@ -82,8 +82,9 @@ function deleteFromBacket(element) {
   }
 }
 function addNumber(element) {
+
   for (let i = 0; i < backet_items.length; i++) {
-     if (element.id == "a_"+backet_items[i]._id) {
+    if (element.id == "a_" + backet_items[i]._id) {
       backet_items[i].number += 1;
       insertIntoBacket(backet_items);
       break;
@@ -92,7 +93,7 @@ function addNumber(element) {
 }
 function reduceNumber(element) {
   for (let i = 0; i < backet_items.length; i++) {
-   if (element.id == "r_"+backet_items[i]._id) {
+    if (element.id == "r_" + backet_items[i]._id) {
       if (backet_items[i].number > 1) {
         backet_items[i].number -= 1;
         insertIntoBacket(backet_items);

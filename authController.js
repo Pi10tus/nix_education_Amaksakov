@@ -5,6 +5,8 @@ const bcrypt = require("bcryptjs");
 const { validationResult } = require("express-validator");
 const jwt = require("jsonwebtoken");
 const { secret } = require("./config");
+//const alert = require("alert");
+
 const generateAccsessToken = (id, roles) => {
   const payload = {
     id,
@@ -35,7 +37,7 @@ class authController {
       return res.json({ message: "User has been registred" });
     } catch (e) {
       console.log(e);
-      res.status(400).json({ message: "Registration error" });
+      return res.status(400).json({ message: "Registration error" });
     }
   }
   async login(req, res) {
@@ -44,17 +46,17 @@ class authController {
 
       const user = await User.findOne({ username });
       if (!user) {
-        res.status(400).json({ message: `User ${user} not found` });
+        return res.status(400).json({ message: `User ${username} not found` });
       }
       const validPass = bcrypt.compareSync(password, user.password);
       if (!validPass) {
-        res.status(400).json({ message: `Wrong password` });
+        return res.status(400).json({ message: `Wrong password` });
       }
       const token = generateAccsessToken(user._id, user.roles);
       return res.json({ token });
     } catch (e) {
       console.log(e);
-      res.status(400).json({ message: "Login error" });
+      return res.status(400).json({ message: "Login error" });
     }
   }
   async getUsers(req, res) {

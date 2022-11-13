@@ -1,29 +1,36 @@
 //const { MongoClient } = require("mongodb");
 async function authFunction() {
-  const user = {
-    username: document.getElementById("usrLog").value,
-    password: document.getElementById("usrPass").value,
-  };
+  try {
+    const user = {
+      username: document.getElementById("usrLog").value,
+      password: document.getElementById("usrPass").value,
+    };
 
-  let result = await fetch("http://localhost:8000/auth/login", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(user),
-  });
+    let result = await fetch("http://localhost:8000/auth/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(user),
+    });
 
-  result = await result.json();
-  if (result.token) {
-    document.getElementById("authModal").style.display = "none";
+    result = await result.json();
 
-    let goods = await fetch("http://localhost:8000/auth/items");
-    goods = await goods.json();
-    await goods.forEach((el) => items.push(el));
-    displayGoods(items);
-    
-    console.log(result);
-  }
+    if (result.token) {
+      document.getElementById("authModal").style.display = "none";
+
+      let goods = await fetch("http://localhost:8000/auth/items");
+      goods = await goods.json();
+      await goods.forEach((el) => items.push(el));
+      displayGoods(items);
+
+      localStorage.setItem("ActiveUser", JSON.stringify(result));
+
+      console.log(localStorage);
+    } else {
+      alert(result.message);
+    }
+  } catch (e) {}
 }
 async function regFunction() {
   const user = {
@@ -47,7 +54,12 @@ async function regFunction() {
     items = await items.json();
     //displayGoods(items);
     console.log(items);
-    console.log(result);
+
+    localStorage.setItem("ActiveUser", JSON.stringify(result));
+
+    console.log(localStorage);
+  } else {
+    alert(result.message);
   }
 }
 

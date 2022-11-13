@@ -26,9 +26,6 @@ const start = async () => {
     app.listen(PORT, () =>
       console.log(`Server is running on http://${HOST}:${PORT}`)
     );
-    
-  } catch (e) {
-    console.log(e);
-  }
+  } catch (e) {}
 };
 start();
