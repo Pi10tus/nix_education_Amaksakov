@@ -5,12 +5,9 @@ const { default: mongoose } = require("mongoose");
 const authRouter = require("./authRouter");
 const PORT = 8000;
 const HOST = "localhost";
-
 const username = encodeURIComponent("Pilotus42");
 const password = encodeURIComponent("fZ86JkEjrjJiYz5A");
-
 const app = express();
-
 app.use(express.json());
 app.use(express.static(__dirname));
 app.get("/", function (req, res) {
