@@ -53,6 +53,8 @@ class authController {
         return res.status(400).json({ message: `Wrong password` });
       }
       const token = generateAccsessToken(user._id, user.roles);
+      req.headers.authorization = token;
+     
       return res.json({ token });
     } catch (e) {
       console.log(e);

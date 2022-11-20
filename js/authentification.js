@@ -19,14 +19,18 @@ async function authFunction() {
     if (result.token) {
       document.getElementById("authModal").style.display = "none";
 
-      let goods = await fetch("http://localhost:8000/auth/items");
+      let goods = await fetch("http://localhost:8000/auth/items", {
+        headers: new Headers({
+          authorization: result.token,
+        }),
+      });
       goods = await goods.json();
       await goods.forEach((el) => items.push(el));
       displayGoods(items);
 
       localStorage.setItem("ActiveUser", JSON.stringify(result));
 
-      console.log(localStorage);
+      console.log(localStorage.getItem("ActiveUser"));
     } else {
       alert(result.message);
     }
@@ -49,11 +53,15 @@ async function regFunction() {
   result = await result.json();
   if (result.message === "User has been registred") {
     document.getElementById("authModal").style.display = "none";
-    //await getItems();
-    let items = await fetch("http://localhost:8000/auth/items");
-    items = await items.json();
-    //displayGoods(items);
-    console.log(items);
+
+    let goods = await fetch("http://localhost:8000/auth/items");
+    goods = await goods.json();
+    await goods.forEach((el) => items.push(el));
+    displayGoods(items);
+
+    localStorage.setItem("ActiveUser", JSON.stringify(result));
+
+    console.log(localStorage);
 
     localStorage.setItem("ActiveUser", JSON.stringify(result));
 
