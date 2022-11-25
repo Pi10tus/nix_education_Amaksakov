@@ -10,9 +10,9 @@ const password = encodeURIComponent("fZ86JkEjrjJiYz5A");
 const app = express();
 app.use(express.json());
 app.use(express.static(__dirname));
-// app.get("/", function (req, res) {
-//   res.sendFile(path.join(__dirname, "/index.html"));
-// });
+app.get("/", function (req, res) {
+  res.sendFile(path.join(__dirname, "/index.html"));
+});
 app.use("/auth", authRouter);
 const start = async () => {
   try {
