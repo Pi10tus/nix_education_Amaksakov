@@ -20,7 +20,7 @@ const start = async () => {
       `mongodb+srv://${username}:${password}@cluster0.cekqq4q.mongodb.net/Maksakov_edu_nix?retryWrites=true&w=majority`
     );
 
-    app.listen(PORT, () =>
+    app.listen((process.env.PORT || PORT), () =>
       console.log(`Server is running on http://${HOST}:${PORT}`)
     );
   } catch (e) {}
