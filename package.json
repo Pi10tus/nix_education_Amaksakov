@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/Pi10tus/nix_education_Amaksakov#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "@mongodb-js/zstd": "^1.0.0",
     "alert": "^5.1.1",
     "bcryptjs": "^2.4.3",
